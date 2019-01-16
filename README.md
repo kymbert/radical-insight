@@ -4,10 +4,10 @@ for _radical insight_ into their mental well being.
 
 ## Prerequisites
 Radical Insight is or will be built with the following frameworks.
-* Spring (Java) for backend service.
-* React.js for frontend web portal.
+* [Express](https://www.expressjs.com)
+* [Pug](https://pugjs.org)
+* [LoopBack](https://www.loopback.io)
 * Twilio integration for SMS messaging (very open to suggestions).
-* Gradle for build and dependency management.
 
 ## Goals
 There are a number of immediate, near term, and long term goals for the project.
@@ -15,9 +15,6 @@ The long term goals are especially lofty and I don't actually expect to ever hav
 them implemented.
 
 ### Immediate goals
-* Service
-  - Send one message per day to each user at a time preference indicated by the user.
-  - Recieve one message per day from each user, parse the number 1 through 10 and store in database with timestamp.
 * Web portal
   - Authentication.
   - Add and edit data entries.
@@ -26,6 +23,8 @@ them implemented.
 
 ### Near term goals
 * Service
+  - Send one message per day to each user at a time preference indicated by the user.
+  - Recieve one message per day from each user, parse the number 1 through 10 and store in database with timestamp.
   - Receive int and text: parse int to data point, text into a note (e.g. `10 my son was born!!1! :-)`).
 * Web portal
   - Display running three or five day average on line graph.
@@ -37,5 +36,5 @@ them implemented.
   - Allow users to submit data multiple times per day. This could benefit those with rapid cycling bipolar or identify "morning dread."
 * Web portal
   - Track behaviors (drinking/drug use, excessive spending, self-harm, etc.).
-  - Support journal entries.
+  - Journal entries.
   - Localization.
