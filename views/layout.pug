@@ -1,9 +1,17 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    h1 Radical Insight
-    block content
-    p copyright © 2019 by Kyle Imbertson
+    head
+        title= title
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,900')
+        link(rel='stylesheet/less', type='text/css' href='/stylesheets/style.less')
+        script(src='http://cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js')
+    body
+        div#container
+            h1 Radical Insight
+            div.nav <a href='/'>home</a>
+            div.nav <a href='/history'>history</a>
+            div.nav <a href='/how-it-works'>how it works</a>
+            div.nav <a href='/get-involved'>get involved</a>
+            h2.subheading= title
+            block content
+            p.footer copyright © 2019 by Kyle Imbertson
