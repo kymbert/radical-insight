@@ -6,7 +6,7 @@ for _radical insight_ into their mental well being.
 Radical Insight is or will be built with the following frameworks.
 * [Express](https://www.expressjs.com)
 * [Pug](https://pugjs.org)
-* [LoopBack](https://www.loopback.io)
+* Probably MongoDB
 * Twilio integration for SMS messaging (very open to suggestions).
 
 ## Goals
@@ -18,7 +18,7 @@ them implemented.
 * Web portal
   - Authentication.
   - Add and edit data entries.
-  - View data log with pagination.
+  - View mood log with pagination.
   - View line graph with date range selection.
 
 ### Near term goals
