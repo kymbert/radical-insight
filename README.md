@@ -1,40 +1,23 @@
 # radical-insight
-A service for people to track their day-to-day mood or energy levels, allowing
-for _radical insight_ into their mental well being.
+A service to help people track their day-to-day mood or energy levels, allowing for _radical insight_ into their mental well being. 
 
-## Prerequisites
-Radical Insight is or will be built with the following frameworks.
-* [Express](https://www.expressjs.com)
-* [Pug](https://pugjs.org)
-* [LoopBack](https://www.loopback.io)
-* Twilio integration for SMS messaging (very open to suggestions).
+## Getting started
+Radical Insight requires NodeJS 11.6 and NPM version 6.5. Once those prerequisites are installed,
+1. clone this repo and run `npm install` to install all dependencies and
+1. `npm start` to run the service. 
+1. Navigate to `http://localhost:3000` to view the web portal.
 
-## Goals
-There are a number of immediate, near term, and long term goals for the project.
-The long term goals are especially lofty and I don't actually expect to ever have
-them implemented.
+## Project structure 
+This project is still in its infancy, so there is not much to say in terms of current structure. In the near future, it will be loosely broken into three main components. 
+1. Database
+    - A place to keep track of users and their mood events. 
+    - Probably MongoDB. 
+1. REST API
+    - Simple API for creating and retrieving data points from the DB.
+    - Integrate with a web portal, email, and SMS service. 
+1. Web portal
+    - A place for users to view their data and record New mood events. 
+    - Include a static page for linking to helpful resources for anyone who may be experiencing depression or mania.
 
-### Immediate goals
-* Web portal
-  - Authentication.
-  - Add and edit data entries.
-  - View data log with pagination.
-  - View line graph with date range selection.
-
-### Near term goals
-* Service
-  - Send one message per day to each user at a time preference indicated by the user.
-  - Recieve one message per day from each user, parse the number 1 through 10 and store in database with timestamp.
-  - Receive int and text: parse int to data point, text into a note (e.g. `10 my son was born!!1! :-)`).
-* Web portal
-  - Display running three or five day average on line graph.
-  - Export data as csv and Excel files.
-  - Links to resources for those who may be manic or depressed.
-
-### Lofty, long term goals
-* Service
-  - Allow users to submit data multiple times per day. This could benefit those with rapid cycling bipolar or identify "morning dread."
-* Web portal
-  - Track behaviors (drinking/drug use, excessive spending, self-harm, etc.).
-  - Journal entries.
-  - Localization.
+## Getting involved 
+We (I) are (am) currently looking for developers to help get this project ready for alpha. Please see the [contributing](https://github.com/kymbert/radical-insight/blob/master/CONTRIBUTING.md) guide for details. Soon as we have a working app there will definitely be a need for testers and designers and secure hosting.
