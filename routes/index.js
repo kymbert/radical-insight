@@ -17,4 +17,8 @@ router.get('/get-involved', function(req, res, next) {
     res.render('getInvolved', { title: 'Get Involved' });
 });
 
+router.get('/resources', function(req, res, next) {
+    res.render('resources', { title: 'Resources' });
+});
+
 module.exports = router;
