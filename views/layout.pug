@@ -2,7 +2,7 @@ doctype html
 html
     head
         title= title
-        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,900')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,500,900')
         link(rel='stylesheet', href='/stylesheets/style.css')
     body
         div#container
@@ -10,7 +10,9 @@ html
             div.nav <a href='/'>home</a>
             div.nav <a href='/history'>history</a>
             div.nav <a href='/how-it-works'>how it works</a>
-            div.nav <a href='/get-involved'>get involved</a>
+            div.nav <a href='/resources'>resources</a>
+            //- div.nav <a href='/get-involved'>get involved</a>
+            div(style="clear: both")
             h2.subheading= title
             block content
             p.footer copyright © 2019 by Kyle Imbertson

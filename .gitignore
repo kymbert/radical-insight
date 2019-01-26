@@ -2,3 +2,4 @@
 /.metadata/
 .recommenders/*
 node_modules
+bin/compileLess.sh
