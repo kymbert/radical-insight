@@ -3,3 +3,5 @@
 .recommenders/*
 node_modules
 bin/compileLess.sh
+logs
+reports
