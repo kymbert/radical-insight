@@ -59,8 +59,23 @@ a {
     border-left: solid 0.25em @color-green;
 }
 
-.footer {
-    text-align: center;
-    font-size: @font-size-small;
-    color: @color-grey;
+div#footer{
+  text-align: center;
+  font-size: @font-size-small;
+  color: @color-grey;
+
+  hr {
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: @color-grey;
+    margin-top: 5em;
+  }
+
+  div.nav-lower {
+    float: left;
+    width: 33%;
+    a {
+      color: @color-grey;
+    }
+  }
 }

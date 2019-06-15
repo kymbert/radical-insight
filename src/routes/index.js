@@ -17,8 +17,16 @@ router.get('/how-it-works', (req, res, next) => {
   res.render('howItWorks', {title: 'How it (will) Work'});
 });
 
+router.get('/privacy', (req, res, next) => {
+  res.render('privacy', {title: 'Privacy Policy'});
+});
+
 router.get('/resources', (req, res, next) => {
   res.render('resources', {title: 'Resources'});
+});
+
+router.get('/terms', (req, res, next) => {
+  res.render('terms', {title: 'Terms & Conditions'});
 });
 
 module.exports = router;
