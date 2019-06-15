@@ -5,7 +5,8 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint .",
     "start": "node ./bin/www",
-    "test": "./node_modules/.bin/wdio wdio.conf.js"
+    "test": "./node_modules/.bin/wdio wdio.conf.js",
+    "test:prod": "./node_modules/.bin/wdio wdio.prod.conf.js"
   },
   "dependencies": {
     "acorn": "^6.1.1",

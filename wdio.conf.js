@@ -1,5 +1,5 @@
 /* eslint max-len: "off" */
-const path = require('path');
+dconst path = require('path');
 
 exports.config = {
   runner: 'local',
