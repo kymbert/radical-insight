@@ -33,9 +33,17 @@
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
     "geckodriver": "^1.16.2",
+    "husky": "^2.4.1",
     "mochawesome-report-generator": "^3.1.5",
+    "prettier": "1.18.2",
+    "pretty-quick": "^1.11.1",
     "wdio-chromedriver-service": "^5.0.2",
     "wdio-mochawesome-reporter": "^3.1.0",
     "wdio-selenium-standalone-service": "0.0.12"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
