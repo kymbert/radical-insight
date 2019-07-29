@@ -37,5 +37,9 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
+  },
+  "scripts": {
+    "compile-css": "lessc ./src/less/style.less ./src/public/stylesheets/style.css",
+    "start": "nodemon -e css,js,pug ./bin/www"
   }
 }

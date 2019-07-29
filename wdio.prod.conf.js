@@ -32,7 +32,7 @@ exports.config = {
   outputDir: path.join(__dirname, "logs"),
 
   bail: 0,
-  baseUrl: "http://localhost:8080",
+  baseUrl: "http://www.rad-insight.com",
   waitforTimeout: 10000,
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
