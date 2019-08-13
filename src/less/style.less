@@ -1,0 +1,163 @@
+@color-blue: #50b7ff;
+@color-grey: #999999;
+@color-purple: #9e88ef;
+@color-green: #b5bd68;
+
+@font-size-copy: 1em;
+@font-size-header-1: 1.75em;
+@font-size-header-2: 1.25em;
+@font-size-small: 0.85em;
+
+@break-point: 768px;
+
+body {
+  font: 100% "Noto Sans SC", Helvetica, sans-serif;
+  font-weight: 300;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+  @media screen and (min-width: 800px) {
+    width: 800px;
+    margin: auto;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
+
+div#container h1 {
+  float: left;
+  @media only screen and (min-width: @break-point) {
+    float: none;
+  }
+}
+
+div#menu-icon {
+  display: block;
+  float: right;
+
+  div {
+    width: 35px;
+    height: 5px;
+    background-color: @color-green;
+    margin: 6px 0;
+  }
+
+  @media only screen and (min-width: @break-point) {
+    display: none;
+  }
+}
+
+div#nav-menu {
+  display: none;
+  @media only screen and (min-width: @break-point) {
+    display: block;
+  }
+}
+
+div.nav {
+  // float: left;
+  // width: 25%;
+  text-align: center;
+  padding-bottom: 1.5em;
+  font-size: @font-size-header-2;
+
+  a {
+    text-decoration: none;
+    color: @color-green;
+    font-weight: 500;
+    border: none;
+  }
+}
+
+div.resource {
+  margin-top: 2em;
+  ul {
+    list-style: none;
+  }
+}
+
+strong {
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid @color-green;
+}
+
+.blockquote {
+  padding-left: 5%;
+  border-left: solid 0.25em @color-green;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+  float: left;
+}
+
+@media only screen and (min-width: @break-point) {
+  /* For desktop: */
+  .col-1 {
+    width: 8.33%;
+  }
+  .col-2 {
+    width: 16.66%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.33%;
+  }
+  .col-5 {
+    width: 41.66%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33%;
+  }
+  .col-8 {
+    width: 66.66%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-10 {
+    width: 83.33%;
+  }
+  .col-11 {
+    width: 91.66%;
+  }
+  .col-12 {
+    width: 100%;
+  }
+}
+
+div#footer {
+  text-align: center;
+  font-size: @font-size-small;
+  color: @color-grey;
+
+  hr {
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: @color-grey;
+    margin-top: 5em;
+  }
+
+  div.nav-lower {
+    float: left;
+    width: 33%;
+    a {
+      color: @color-grey;
+    }
+  }
+}

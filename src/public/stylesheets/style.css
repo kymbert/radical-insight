@@ -1,7 +1,9 @@
 body {
-  font: 100% 'Noto Sans SC', Helvetica, sans-serif;
+  font: 100% "Noto Sans SC", Helvetica, sans-serif;
   font-weight: 300;
-  width: 100%;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
 }
 @media screen and (min-width: 800px) {
   body {
@@ -14,9 +16,38 @@ h2,
 h3 {
   font-weight: 500;
 }
-div.nav {
+div#container h1 {
   float: left;
-  width: 25%;
+}
+@media only screen and (min-width: 768px) {
+  div#container h1 {
+    float: none;
+  }
+}
+div#menu-icon {
+  display: block;
+  float: right;
+}
+div#menu-icon div {
+  width: 35px;
+  height: 5px;
+  background-color: #b5bd68;
+  margin: 6px 0;
+}
+@media only screen and (min-width: 768px) {
+  div#menu-icon {
+    display: none;
+  }
+}
+div#nav-menu {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  div#nav-menu {
+    display: block;
+  }
+}
+div.nav {
   text-align: center;
   padding-bottom: 1.5em;
   font-size: 1.25em;
@@ -44,6 +75,50 @@ a {
 .blockquote {
   padding-left: 5%;
   border-left: solid 0.25em #b5bd68;
+}
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+  float: left;
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {
+    width: 8.33%;
+  }
+  .col-2 {
+    width: 16.66%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.33%;
+  }
+  .col-5 {
+    width: 41.66%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33%;
+  }
+  .col-8 {
+    width: 66.66%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-10 {
+    width: 83.33%;
+  }
+  .col-11 {
+    width: 91.66%;
+  }
+  .col-12 {
+    width: 100%;
+  }
 }
 div#footer {
   text-align: center;

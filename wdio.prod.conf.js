@@ -1,6 +1,5 @@
 /* eslint max-len: "off" */
 const path = require("path");
-const { TimelineService } = require("wdio-timeline-reporter/timeline-service");
 
 exports.config = {
   runner: "local",
@@ -33,36 +32,21 @@ exports.config = {
   outputDir: path.join(__dirname, "logs"),
 
   bail: 0,
-  baseUrl: "http://localhost:8080",
+  baseUrl: "http://www.rad-insight.com",
   waitforTimeout: 10000,
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
 
-  services: ["chromedriver", [TimelineService]],
+  services: ["chromedriver"],
   framework: "mocha",
 
   // specFileRetries: 1,
 
-  reporters: [
-    [
-      "timeline",
-      {
-        outputDir: "./reports/end-to-end",
-        embedImages: true,
-        images: {
-          quality: 80,
-          resize: true,
-          reductionRation: 2
-        },
-        screenshotStrategy: "on:error"
-      }
-    ]
-  ],
-
+  reporters: ["dot"],
   mochaOpts: {
     ui: "bdd",
     timeout: 60000
-  },
+  }
 
   //
   // =====
@@ -94,9 +78,8 @@ exports.config = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {Array.<String>} specs List of spec file paths that are to be run
    */
-  before: function(capabilities, specs) {
-    browser.setWindowSize(1200, 800);
-  }
+  // before: function (capabilities, specs) {
+  // },
   /**
    * Runs before a WebdriverIO command gets executed.
    * @param {String} commandName hook command name
