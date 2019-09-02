@@ -3,5 +3,6 @@
 .recommenders/*
 node_modules
 bin/compileLess.sh
+src/config/dev.js
 logs
 reports

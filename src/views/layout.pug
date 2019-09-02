@@ -9,7 +9,15 @@ html
 
     body
         div#container
-            h1 Radical Insight
+            if user
+                div.row-1
+                    div.col-1.pos-11 #{user.firstName}&nbsp;&nbsp;&nbsp;&nbsp;|
+                    div.col-1.button <a href='/auth/logout'>log out</a>
+                h1 Radical Insight
+            else
+                div.row-1
+                    div.pos-12.button <a href='/auth/google'>log in</a>
+                h1 Radical Insight
             div#menu-icon
               div
               div
