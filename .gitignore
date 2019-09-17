@@ -3,6 +3,7 @@
 .recommenders/*
 node_modules
 bin/compileLess.sh
+bin/run-mocha.sh
 src/config/dev.js
 logs
 reports

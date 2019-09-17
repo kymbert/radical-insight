@@ -29,10 +29,14 @@ passport.use(
           done(null, existingUser);
         } else {
           new User({
+            agreedToTerms: Date.now(),
+            authType: "Google",
             email: profile.emails[0].value,
             googleId: profile.id,
-            firstName: profile.name.givenName,
-            lastName: profile.name.familyName
+            name: {
+              first: profile.name.givenName,
+              last: profile.name.familyName
+            }
           })
             .save()
             .then(user => done(null, user));

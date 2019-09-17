@@ -11,7 +11,7 @@ html
         div#container
             if user
                 div.row-1
-                    div.col-1.pos-11 #{user.firstName}&nbsp;&nbsp;&nbsp;&nbsp;|
+                    div.col-1.pos-11 #{user.name.first}&nbsp;&nbsp;&nbsp;&nbsp;|
                     div.col-1.button <a href='/auth/logout'>log out</a>
                 h1 Radical Insight
             else
