@@ -15,6 +15,10 @@ module.exports = app => {
     res.render("howItWorks", { title: "How it (will) Work", user: req.user });
   });
 
+  app.get("/login", (req, res, next) => {
+    res.render("login", { title: "Log in to Radical Insight" });
+  });
+
   app.get("/privacy", (req, res, next) => {
     res.render("privacy", { title: "Privacy Policy", user: req.user });
   });

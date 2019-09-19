@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "compile-css": "lessc ./src/less/style.less ./src/public/stylesheets/style.css",
+    "compile-css": "lessc ./src/less/style.less ./src/client/public/stylesheets/style.css",
     "test": "./bin/runMocha.sh",
     "test:end-to-end": "wdio wdio.conf.js",
     "test:unit": "./bin/runMocha.sh",

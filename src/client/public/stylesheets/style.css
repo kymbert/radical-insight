@@ -171,14 +171,14 @@ a {
     margin-left: 91.66%;
   }
 }
-div.button {
+div.button-purple {
   text-align: center;
   box-sizing: border-box;
   border: 2px solid #9e88ef;
   border-radius: 12px;
   background-color: #9e88ef;
 }
-div.button a {
+div.button-purple a {
   border-bottom: none;
   color: #fff;
 }
