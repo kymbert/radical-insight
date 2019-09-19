@@ -5,22 +5,22 @@ describe("site navigation", () => {
     browser.url("/");
     assert.equal(browser.getTitle(), "Home");
 
-    browser.$$("a")[1].click();
+    browser.$$("a")[2].click();
     assert.equal(browser.getTitle(), "About");
     assert.equal(browser.getUrl(), `${driver.config.baseUrl}/about`);
     assert.equal($("h2.subheading").getText(), "About");
 
-    browser.$$("a")[2].click();
+    browser.$$("a")[3].click();
     assert.equal(browser.getTitle(), "How it (will) Work");
     assert.equal(browser.getUrl(), `${driver.config.baseUrl}/how-it-works`);
     assert.equal($("h2.subheading").getText(), "How it (will) Work");
 
-    browser.$$("a")[3].click();
+    browser.$$("a")[4].click();
     assert.equal(browser.getTitle(), "Resources");
     assert.equal(browser.getUrl(), `${driver.config.baseUrl}/resources`);
     assert.equal($("h2.subheading").getText(), "Resources");
 
-    browser.$$("a")[0].click();
+    browser.$$("a")[1].click();
     assert.equal(browser.getTitle(), "Home");
     assert.equal(browser.getUrl(), `${driver.config.baseUrl}/`);
   });

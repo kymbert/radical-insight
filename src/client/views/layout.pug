@@ -9,7 +9,15 @@ html
 
     body
         div#container
-            h1 Radical Insight
+            if user
+                div.row-1
+                    div.col-1.pos-11 #{user.name.first}&nbsp;&nbsp;&nbsp;&nbsp;|
+                    div.col-1.button-purple <a href='/auth/logout'>log out</a>
+                h1 Radical Insight
+            else
+                div.row-1
+                    div.pos-12.button-purple <a href='/login'>log in</a>
+                h1 Radical Insight
             div#menu-icon
               div
               div
@@ -36,6 +44,6 @@ html
         script.
             $(document).ready(function() {
                 $('div#menu-icon').click(function() {
-                    $('div#nav-menu').toggle('slow');
+                    $('div#nav-menu').toggle('fast');
                 });
             });
