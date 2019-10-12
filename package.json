@@ -7,7 +7,7 @@
     "test": "./bin/runMocha.sh",
     "test:end-to-end": "wdio wdio.conf.js",
     "test:unit": "./bin/runMocha.sh",
-    "start": "react-scripts start"
+    "start": "cd client && npm start"
   },
   "dependencies": {
       "axios": "^0.19.0",
