@@ -1,0 +1,28 @@
+@import 'variables';
+
+div#site-header {
+    position: absolute;
+    top: 0%;
+    text-align: center;
+    padding-top: 1em;
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    z-index: 99;
+
+    a {
+        color: black;
+        font-size: 1.3em;
+
+        &.inactive {
+            color: $grey;
+        }
+    }
+
+    @media (max-width: $bp-smartphone) {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

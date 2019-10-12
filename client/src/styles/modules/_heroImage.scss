@@ -1,0 +1,42 @@
+@import 'variables';
+
+div#hero {
+    background-image: url("../images/adult-adventure-backlit-915972.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: inherit;
+
+    height: 102vh;
+    width: 101vw;
+    margin-top: -2vh;
+    margin-left: -2vw;
+    margin-bottom: 3vh;
+    padding: 2em 0;
+
+    @media (max-device-width: $bp-smartphone) {
+        background-attachment: scroll;
+    }
+
+    position: relative;
+    text-align: center;
+
+    div.heading {
+        position: absolute;
+        width: 100%;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: default;
+    }
+
+    p.small-text {
+        position: absolute;
+        top: 90%;
+        right: 5%;
+        color: #666;
+        width: max-content;
+        font-size: 1em;
+    }
+}

@@ -19,13 +19,21 @@ class SiteHeader extends React.Component {
                 </div>
                 <div className="item-2"></div>
                 <div className="item-3" />
-                <div className="item-4"></div>
-                <div className="item-5">
-                    <Link to={"/resources"}>
-                        Resources
+                <div className="item-4">
+                    <Link to={"/about"}>
+                        about
                     </Link>
                 </div>
-                <div className="item-6">Sign In</div>
+                <div className="item-5">
+                    <Link to={"/resources"}>
+                        resources
+                    </Link>
+                </div>
+                <div className="item-6">
+                    <Link to={"/"} className="inactive">
+                        sign in
+                    </Link>
+                </div>
                 <div style={{clear: "both"}} />
             </div>
         );

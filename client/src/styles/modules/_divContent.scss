@@ -1,0 +1,22 @@
+@import 'variables';
+
+div.content,
+div.landing-content {
+    @media (max-width: $bp-smartphone) {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (min-width: $bp-smartphone) {
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (min-width: $content-max-width) {
+      max-width: $content-max-width;
+      margin-left: auto;
+      margin-right: auto;
+    }
+}
