@@ -1,0 +1,152 @@
+@font-face {
+  font-family: 'Arcon';
+  src: url("../fonts/Arcon-Regular.otf"); }
+.item-1 {
+  grid-column: 1;
+  cursor: default; }
+
+.item-2 {
+  grid-column: 2;
+  cursor: default; }
+
+.item-3 {
+  grid-column: 3;
+  cursor: default; }
+
+.item-4 {
+  grid-column: 4;
+  cursor: default; }
+
+.item-5 {
+  grid-column: 5;
+  cursor: default; }
+
+html {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  height: 100%;
+  width: 100%;
+  background-color: ghostwhite; }
+
+h1 {
+  font-family: 'lane-upper', sans-serif;
+  font-size: 5em;
+  text-align: center; }
+
+h2 {
+  font-family: 'lane-narrow', sans-serif;
+  font-size: 2em;
+  text-align: center; }
+
+h3 {
+  font-family: 'lane-narrow', sans-serif;
+  font-size: 2em;
+  text-align: center;
+  color: indianred; }
+
+a {
+  text-decoration: none;
+  color: steelblue; }
+
+b {
+  color: indianred; }
+
+#site-header {
+  position: absolute;
+  top: 0%;
+  text-align: center;
+  padding-top: 1em;
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  z-index: 99; }
+  #site-header a {
+    color: black; }
+
+#footer-grid {
+  width: 100%;
+  display: inline-grid;
+  text-align: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto; }
+
+div.content {
+  margin-top: 4em; }
+  @media (min-width: 768px) {
+    div.content {
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto; } }
+  @media (min-width: 850px) {
+    div.content {
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto; } }
+
+div.section {
+  height: 102vh;
+  width: 101vw;
+  margin-top: -2vh;
+  margin-left: -2vw;
+  margin-bottom: 3vh;
+  padding: 2em 0; }
+  div.section p {
+    font-size: 2em; }
+    @media (min-width: 768px) {
+      div.section p {
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto; } }
+    @media (min-width: 850px) {
+      div.section p {
+        max-width: 850px;
+        margin-left: auto;
+        margin-right: auto; } }
+
+div#why {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/electronics-girl-hands-359757.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: auto;
+  padding-bottom: 3em; }
+
+div#hero {
+  background-image: url("../images/adult-adventure-backlit-915972.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: inherit;
+  position: relative;
+  text-align: center; }
+  div#hero div.heading {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: default; }
+  div#hero p.small-text {
+    position: absolute;
+    top: 90%;
+    right: 5%;
+    color: #666;
+    width: max-content;
+    font-size: 1em; }
+
+span.em {
+  color: white;
+  font-style: italic; }
+
+ul#get-involved {
+  width: 60%;
+  margin-left: 15%;
+  list-style: none; }
+  ul#get-involved li {
+    font-size: 2em;
+    margin: 1em 0; }
+
+/*# sourceMappingURL=global.css.map */
