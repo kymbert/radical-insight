@@ -20,8 +20,8 @@ mongoose.connect(keys.mongoURI, { useNewUrlParser: true }).catch(err => {
 const app = express();
 
 // view engine setup
-app.set("views", path.join(__dirname, "client/views"));
-app.set("view engine", "pug");
+// app.set("views", path.join(__dirname, "client/views"));
+// app.set("view engine", "pug");
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -37,9 +37,9 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-require("./api/user")(app);
-require("./client/routes/auth")(app);
-require("./client/routes/static")(app);
+require("./routes/auth")(app);
+require("./routes/static")(app);
+require("./routes/user")(app);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

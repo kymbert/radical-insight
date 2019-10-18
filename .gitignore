@@ -4,6 +4,7 @@
 node_modules
 bin/compileLess.sh
 bin/run-mocha.sh
-src/config/dev.js
+**/config/dev.js
 logs
 reports
+client/.sass-cache
