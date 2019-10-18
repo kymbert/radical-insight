@@ -1,128 +1,57 @@
-<<<<<<< Updated upstream
-// @use 'colors' as *;
-// @use 'textStyles' as *;
-@import './modules/_textStyles';
-@import './modules/_divContent';
-@import './modules/_siteHeader';
-@import './modules/_heroImage';
-@import './modules/_divLandingPage';
-
-// $accent: indianred;
-// $grey: #666;
-// $orange: rgb(167, 48, 22);
-// $link-blue: steelblue;
-//
-// $media-breakpoint: 768px;
-// $content-max-breakpoint: 850px;
-
-// @mixin content-margins {
-//     @media (max-width: $media-breakpoint) {
-//         width: 90%;
-//         margin-left: auto;
-//         margin-right: auto;
-//     }
-//
-//     @media (min-width: $media-breakpoint) {
-//         max-width: 750px;
-//         margin-left: auto;
-//         margin-right: auto;
-//     }
-//
-//     @media (min-width: $content-max-breakpoint) {
-//       max-width: $content-max-breakpoint;
-//       margin-left: auto;
-//       margin-right: auto;
-//     }
-// }
-=======
-@import './modules/_textStyles';
-@import './modules/_divContent';
-@import './modules/_siteHeader';
-@import './modules/_landingPage';
->>>>>>> Stashed changes
+@import "./modules/_breakpoints";
+@import "./modules/_colors";
+@import "./modules/_divContent";
+@import "./modules/_divLandingPage";
+@import "./modules/_fonts";
+@import "./modules/_heroImage";
+@import "./modules/_landingPage";
+@import "./modules/_textStyles";
+@import "./modules/_siteHeader";
+@import "./modules/_variables";
 
 @for $i from 1 to 6 {
-    .item-#{$i} {
-        grid-column: $i;
-        cursor: default;
-    }
+  .item-#{$i} {
+    grid-column: $i;
+    cursor: default;
+  }
 }
 
 html {
-    // @include body-text;
-    height: 100%;
-    width: 100%;
-    background-color: ghostwhite;
+  height: 100%;
+  width: 100%;
+  background-color: ghostwhite;
 }
-
-<<<<<<< Updated upstream
-// h1 { @include heading-1 }
-// h2 { @include heading-2 }
-// h3 { @include heading-3 }
-
-// a {
-//     text-decoration: none;
-//     color: $link;
-// }
-//
-// b {
-//     color: $accent-1;
-// }
-
-=======
->>>>>>> Stashed changes
 
 #footer-grid {
-    width: 100%;
-    display: inline-grid;
-    text-align: center;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-}
-<<<<<<< Updated upstream
-
-div.content {
-    // @include content-margins;
-    // margin-top: 4em;
-}
-
-div.section {
-    // height: 102vh;
-    // width: 101vw;
-    // margin-top: -2vh;
-    // margin-left: -2vw;
-    // margin-bottom: 3vh;
-    // padding: 2em 0;
-
-    p {
-        // @include content-margins;
-        // font-size: 2em;
-    }
+  width: 100%;
+  display: inline-grid;
+  text-align: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
 }
 
 div#why {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/electronics-girl-hands-359757.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    height: auto;
-    padding-bottom: 3em;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+    url("../images/electronics-girl-hands-359757.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: auto;
+  padding-bottom: 3em;
 }
 
 span.em {
-    color: white;
-    font-style: italic;
+  color: white;
+  font-style: italic;
 }
 
 ul#get-involved {
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-    list-style: none;
-    font-size: 1.3em;
-    li {
-        margin: 1em;
-    }
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  list-style: none;
+  font-size: 1.3em;
+  li {
+    margin: 1em;
+  }
 }
-=======
->>>>>>> Stashed changes

@@ -1,83 +1,33 @@
-html {
-  font-family: "lane-narrow", sans-serif;
-  font-size: 100%; }
-
-h1, h2, h3 {
-  text-align: center; }
-
-h1 {
-  font-family: "lane-upper", sans-serif;
-  font-size: 5em; }
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 4em; } }
-
-h2 {
-  font-family: "lane-narrow", sans-serif;
-  font-size: 2em; }
-
-h3 {
-  font-family: "lane-narrow", sans-serif;
-  font-size: 2em;
-  color: indianred; }
-
-a {
-  text-decoration: none;
-  color: steelblue; }
-
-b {
-  color: indianred; }
-
-p {
-  font-size: 1.3em; }
-
 @media (max-width: 768px) {
   div.content,
   div.landing-content {
     width: 90%;
     margin-left: auto;
-    margin-right: auto; } }
+    margin-right: auto;
+  }
+}
 @media (min-width: 768px) {
   div.content,
   div.landing-content {
     max-width: 750px;
     margin-left: auto;
-    margin-right: auto; } }
+    margin-right: auto;
+  }
+}
 @media (min-width: 850px) {
   div.content,
   div.landing-content {
     max-width: 850px;
     margin-left: auto;
-    margin-right: auto; } }
+    margin-right: auto;
+  }
+}
 
-div#site-header {
-  position: absolute;
-  top: 0%;
-  text-align: center;
-  padding-top: 1em;
-  width: 100%;
-  display: inline-grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: auto;
-  z-index: 99; }
-  div#site-header a {
-    color: black;
-    font-size: 1.3em; }
-    div#site-header a.inactive {
-      color: #666; }
-  @media (max-width: 768px) {
-    div#site-header {
-      width: 90%;
-      margin-left: auto;
-      margin-right: auto; } }
-
-<<<<<<< Updated upstream
-=======
 div.section {
   font-size: 1.2em;
-  padding: 2em; }
+  padding: 2em;
+}
 
->>>>>>> Stashed changes
 div#hero {
   background-image: url("../images/adult-adventure-backlit-915972.jpg");
   background-position: center;
@@ -92,112 +42,239 @@ div#hero {
   margin-bottom: 3vh;
   padding: 2em 0;
   position: relative;
-  text-align: center; }
-  @media (max-device-width: 768px) {
-    div#hero {
-      background-attachment: scroll; } }
-  div#hero div.heading {
-    position: absolute;
-    width: 100%;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: default; }
-<<<<<<< Updated upstream
-=======
-    div#hero div.heading span.em {
-      color: white;
-      font-style: italic; }
->>>>>>> Stashed changes
-  div#hero p.small-text {
-    position: absolute;
-    top: 90%;
-    right: 5%;
-    color: #666;
-    width: max-content;
-    font-size: 1em; }
+  text-align: center;
+}
+@media (max-device-width: 768px) {
+  div#hero {
+    background-attachment: scroll;
+  }
+}
+div#hero div.heading {
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: default;
+}
+div#hero p.small-text {
+  position: absolute;
+  top: 90%;
+  right: 5%;
+  color: #666;
+  width: max-content;
+  font-size: 1em;
+}
 
-<<<<<<< Updated upstream
 div.section {
   font-size: 1.2em;
-  padding: 2em; }
-=======
+  padding: 2em;
+}
+
+div#hero {
+  background-image: url("../images/adult-adventure-backlit-915972.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: inherit;
+  height: 102vh;
+  width: 101vw;
+  margin-top: -2vh;
+  margin-left: -2vw;
+  margin-bottom: 3vh;
+  padding: 2em 0;
+  position: relative;
+  text-align: center;
+}
+@media (max-device-width: 768px) {
+  div#hero {
+    background-attachment: scroll;
+  }
+}
+div#hero div.heading {
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: default;
+}
+div#hero div.heading span.em {
+  color: white;
+  font-style: italic;
+}
+div#hero p.small-text {
+  position: absolute;
+  top: 90%;
+  right: 5%;
+  color: #666;
+  width: max-content;
+  font-size: 1em;
+}
+
 div#why {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/electronics-girl-hands-359757.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+    url("../images/electronics-girl-hands-359757.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   height: auto;
-  padding-bottom: 3em; }
-  @media (max-device-width: 768px) {
-    div#why {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/phone-electronics-girl-hands-359757.jpg");
-      background-attachment: scroll; } }
+  padding-bottom: 3em;
+}
+@media (max-device-width: 768px) {
+  div#why {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+      url("../images/phone-electronics-girl-hands-359757.jpg");
+    background-attachment: scroll;
+  }
+}
 
 ul#get-involved {
   width: 75%;
   margin-left: auto;
   margin-right: auto;
   list-style: none;
-  font-size: 1.3em; }
-  ul#get-involved li {
-    margin: 1em; }
->>>>>>> Stashed changes
+  font-size: 1.3em;
+}
+ul#get-involved li {
+  margin: 1em;
+}
+
+html {
+  font-family: "lane-narrow", sans-serif;
+  font-size: 100%;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+h1 {
+  font-family: "lane-upper", sans-serif;
+  font-size: 5em;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 4em;
+  }
+}
+
+h2 {
+  font-family: "lane-narrow", sans-serif;
+  font-size: 2em;
+}
+
+h3 {
+  font-family: "lane-narrow", sans-serif;
+  font-size: 2em;
+  color: indianred;
+}
+
+a {
+  text-decoration: none;
+  color: lightblue;
+}
+
+b {
+  color: indianred;
+}
+
+p {
+  font-size: 1.3em;
+}
+
+div#site-header {
+  position: absolute;
+  top: 0%;
+  text-align: center;
+  padding-top: 1em;
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  z-index: 99;
+}
+div#site-header a {
+  color: black;
+  font-size: 1.3em;
+}
+div#site-header a.inactive {
+  color: #666;
+}
+@media (max-width: 768px) {
+  div#site-header {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 .item-1 {
   grid-column: 1;
-  cursor: default; }
+  cursor: default;
+}
 
 .item-2 {
   grid-column: 2;
-  cursor: default; }
+  cursor: default;
+}
 
 .item-3 {
   grid-column: 3;
-  cursor: default; }
+  cursor: default;
+}
 
 .item-4 {
   grid-column: 4;
-  cursor: default; }
+  cursor: default;
+}
 
 .item-5 {
   grid-column: 5;
-  cursor: default; }
+  cursor: default;
+}
 
 html {
   height: 100%;
   width: 100%;
-  background-color: ghostwhite; }
+  background-color: ghostwhite;
+}
 
 #footer-grid {
   width: 100%;
   display: inline-grid;
   text-align: center;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto; }
+  grid-template-rows: auto;
+}
 
-<<<<<<< Updated upstream
 div#why {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/electronics-girl-hands-359757.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+    url("../images/electronics-girl-hands-359757.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   height: auto;
-  padding-bottom: 3em; }
+  padding-bottom: 3em;
+}
 
 span.em {
   color: white;
-  font-style: italic; }
+  font-style: italic;
+}
 
 ul#get-involved {
   width: 75%;
   margin-left: auto;
   margin-right: auto;
   list-style: none;
-  font-size: 1.3em; }
-  ul#get-involved li {
-    margin: 1em; }
+  font-size: 1.3em;
+}
+ul#get-involved li {
+  margin: 1em;
+}
 
-=======
->>>>>>> Stashed changes
 /*# sourceMappingURL=main.css.map */
