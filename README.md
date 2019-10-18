@@ -8,7 +8,7 @@ Radical Insight requires NodeJS 11.6 and NPM version 6.5. Once those prerequisit
 
 1. clone this repo and run `npm install` to install all dependencies and
 1. `npm start` to run the service.
-1. Navigate to `http://localhost:8080` to view the web portal.
+1. Navigate to `http://localhost:3000` to view the web portal.
 
 ## Project structure
 
@@ -23,19 +23,6 @@ This project is still in its infancy, so there is not much to say in terms of cu
 1. Web portal
    - A place for users to view their data and record New mood events.
    - Include a static page for linking to helpful resources for anyone who may be experiencing depression or mania.
-
-## Run the tests
-
-I have mocha integrated with my editor pretty heavily, so I created a `runMocha.sh` script in the `bin` directory to run unit tests. You'll need to create one for yourself. It can be as simple as:
-
-```bash
-#!/usr/bin/env bash
-npx mocha "./test/unit/**/*.spec.js"
-```
-
-Then all you need to do is type `npm test` in your terminal to kick off the unit tests.
-
-To run the end-to-end tests (written with [WebdriverIO](https://webdriver.io)), you'll first need to start the selenium server (via `./etc/startSelenium.sh`) in the background or a separate terminal, then you can run `npm run test:end-to-end` as needed.
 
 ## Getting involved
 
