@@ -1,0 +1,78 @@
+@import 'variables';
+
+div.section {
+    font-size: 1.2em;
+    padding: 2em;
+}
+
+div#hero {
+    background-image: url("../images/adult-adventure-backlit-915972.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: inherit;
+
+    height: 102vh;
+    width: 101vw;
+    margin-top: -2vh;
+    margin-left: -2vw;
+    margin-bottom: 3vh;
+    padding: 2em 0;
+
+    @media (max-device-width: $bp-smartphone) {
+        // background-image: url("../images/phone-adult-adventure-backlit-915972.jpg");
+        background-attachment: scroll;
+    }
+
+    position: relative;
+    text-align: center;
+
+    div.heading {
+        position: absolute;
+        width: 100%;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: default;
+
+        span.em {
+            color: white;
+            font-style: italic;
+        }
+    }
+
+    p.small-text {
+        position: absolute;
+        top: 90%;
+        right: 5%;
+        color: #666;
+        width: max-content;
+        font-size: 1em;
+    }
+}
+
+div#why {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/electronics-girl-hands-359757.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: auto;
+    padding-bottom: 3em;
+
+    @media (max-device-width: $bp-smartphone) {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/phone-electronics-girl-hands-359757.jpg");
+        background-attachment: scroll;
+    }
+}
+
+ul#get-involved {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+    font-size: 1.3em;
+    li {
+        margin: 1em;
+    }
+}

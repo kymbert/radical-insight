@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 // @use 'colors' as *;
 // @use 'textStyles' as *;
 @import './modules/_textStyles';
@@ -33,6 +34,12 @@
 //       margin-right: auto;
 //     }
 // }
+=======
+@import './modules/_textStyles';
+@import './modules/_divContent';
+@import './modules/_siteHeader';
+@import './modules/_landingPage';
+>>>>>>> Stashed changes
 
 @for $i from 1 to 6 {
     .item-#{$i} {
@@ -48,6 +55,7 @@ html {
     background-color: ghostwhite;
 }
 
+<<<<<<< Updated upstream
 // h1 { @include heading-1 }
 // h2 { @include heading-2 }
 // h3 { @include heading-3 }
@@ -61,6 +69,8 @@ html {
 //     color: $accent-1;
 // }
 
+=======
+>>>>>>> Stashed changes
 
 #footer-grid {
     width: 100%;
@@ -69,6 +79,7 @@ html {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
 }
+<<<<<<< Updated upstream
 
 div.content {
     // @include content-margins;
@@ -113,3 +124,5 @@ ul#get-involved {
         margin: 1em;
     }
 }
+=======
+>>>>>>> Stashed changes
