@@ -27,52 +27,15 @@ div.section {
   font-size: 1.2em;
   padding: 2em;
 }
-
-div#hero {
-  background-image: url("../images/adult-adventure-backlit-915972.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  padding: inherit;
-  height: 102vh;
-  width: 101vw;
-  margin-top: -2vh;
-  margin-left: -2vw;
-  margin-bottom: 3vh;
-  padding: 2em 0;
-  position: relative;
-  text-align: center;
-}
 @media (max-device-width: 768px) {
-  div#hero {
-    background-attachment: scroll;
+  div.section {
+    font-size: 1em;
+    padding: 1em;
   }
 }
-div#hero div.heading {
-  position: absolute;
-  width: 100%;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  cursor: default;
-}
-div#hero p.small-text {
-  position: absolute;
-  top: 90%;
-  right: 5%;
-  color: #666;
-  width: max-content;
-  font-size: 1em;
-}
-
-div.section {
-  font-size: 1.2em;
-  padding: 2em;
-}
 
 div#hero {
-  background-image: url("../images/adult-adventure-backlit-915972.jpg");
+  background-image: url("../images/sunrise.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -89,6 +52,7 @@ div#hero {
 }
 @media (max-device-width: 768px) {
   div#hero {
+    background-image: url("../images/sunrise-mobile.jpg");
     background-attachment: scroll;
   }
 }
@@ -115,7 +79,7 @@ div#hero p.small-text {
 
 div#why {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
-    url("../images/electronics-girl-hands-359757.jpg");
+    url("../images/smartphone.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -125,24 +89,33 @@ div#why {
 @media (max-device-width: 768px) {
   div#why {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
-      url("../images/phone-electronics-girl-hands-359757.jpg");
+      url("../images/smartphone-mobile.jpg");
     background-attachment: scroll;
   }
 }
 
 ul#get-involved {
+  list-style: none;
   width: 75%;
   margin-left: auto;
   margin-right: auto;
-  list-style: none;
-  font-size: 1.3em;
 }
 ul#get-involved li {
-  margin: 1em;
+  font-size: 1.3em;
+  margin-bottom: 0.7em;
+}
+ul#get-involved li:last-child {
+  margin-bottom: 0em;
+}
+@media (max-device-width: 768px) {
+  ul#get-involved {
+    width: 100%;
+    margin-left: -2.5em;
+  }
 }
 
 html {
-  font-family: "lane-narrow", sans-serif;
+  font-family: "lato", sans-serif;
   font-size: 100%;
 }
 
@@ -175,7 +148,7 @@ h3 {
 
 a {
   text-decoration: none;
-  color: lightblue;
+  color: cornflowerblue;
 }
 
 b {
@@ -186,6 +159,19 @@ p {
   font-size: 1.3em;
 }
 
+div.resources #title {
+  margin-top: 5em;
+}
+
+#footer-grid {
+  width: 100%;
+  display: inline-grid;
+  text-align: center;
+  font-size: 0.8em;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+}
+
 div#site-header {
   position: absolute;
   top: 0%;
@@ -193,7 +179,7 @@ div#site-header {
   padding-top: 1em;
   width: 100%;
   display: inline-grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   z-index: 99;
 }
@@ -243,38 +229,9 @@ html {
   background-color: ghostwhite;
 }
 
-#footer-grid {
-  width: 100%;
-  display: inline-grid;
-  text-align: center;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
-}
-
-div#why {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
-    url("../images/electronics-girl-hands-359757.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  height: auto;
-  padding-bottom: 3em;
-}
-
 span.em {
   color: white;
   font-style: italic;
-}
-
-ul#get-involved {
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-  list-style: none;
-  font-size: 1.3em;
-}
-ul#get-involved li {
-  margin: 1em;
 }
 
 /*# sourceMappingURL=main.css.map */

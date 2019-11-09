@@ -1,11 +1,11 @@
 @import "./modules/_breakpoints";
 @import "./modules/_colors";
 @import "./modules/_divContent";
-@import "./modules/_divLandingPage";
 @import "./modules/_fonts";
-@import "./modules/_heroImage";
 @import "./modules/_landingPage";
 @import "./modules/_textStyles";
+@import "./modules/resourcePage";
+@import "./modules/_siteFooter";
 @import "./modules/_siteHeader";
 @import "./modules/_variables";
 
@@ -22,36 +22,7 @@ html {
   background-color: ghostwhite;
 }
 
-#footer-grid {
-  width: 100%;
-  display: inline-grid;
-  text-align: center;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
-}
-
-div#why {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
-    url("../images/electronics-girl-hands-359757.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  height: auto;
-  padding-bottom: 3em;
-}
-
 span.em {
   color: white;
   font-style: italic;
-}
-
-ul#get-involved {
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-  list-style: none;
-  font-size: 1.3em;
-  li {
-    margin: 1em;
-  }
 }

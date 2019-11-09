@@ -7,4 +7,4 @@ bin/run-mocha.sh
 **/config/dev.js
 logs
 reports
-client/.sass-cache
+.sass-cache
