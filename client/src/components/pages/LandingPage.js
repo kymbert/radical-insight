@@ -16,11 +16,11 @@ class LandingPage extends React.Component {
           <p className="small-text">
             photo by{" "}
             <a
-              href="https://www.pexels.com/@abhiram2244"
+              href="https://www.pexels.com/@amine-may-856642"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Abhiram Prakash
+              Anime May
             </a>{" "}
             from Pexels
           </p>
