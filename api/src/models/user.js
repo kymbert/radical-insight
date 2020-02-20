@@ -1,17 +1,12 @@
 const mongoose = require("mongoose");
+const EntrySchema = require("./Entry");
 const { Schema } = mongoose;
 
-const userSchema = new Schema({
-  agreedToTerms: {
+const UserSchema = new Schema({
+  agreedToTerms: Date,
+  name: {
     type: String,
-    required: true,
-    default: Date.now()
-  },
-  authType: {
-    type: String,
-    enum: ["Email", "Google"],
-    required: true,
-    default: "Radical"
+    required: true
   },
   email: {
     type: String,
@@ -19,29 +14,17 @@ const userSchema = new Schema({
     unique: true,
     dropDups: true
   },
-  googleId: {
-    type: String,
-    required: function() {
-      return this.authType === "Google";
-    }
-  },
-  name: {
-    first: {
-      type: String,
-      required: true
-    },
-    last: {
-      type: String,
-      required: true
-    }
+  lastLogin: {
+    type: Date,
+    required: true,
+    default: Date.now()
   },
   password: {
     // TODO: password encryption.
     type: String,
-    required: function() {
-      return this.authType === "Email";
-    }
-  }
+    required: true
+  },
+  entries: [EntrySchema]
 });
 
-mongoose.model("users", userSchema);
+mongoose.model("users", UserSchema);
