@@ -1,6 +1,5 @@
 const keys = require("./config/keys");
 const bodyParser = require("body-parser");
-const cookieSession = require("cookie-session");
 const express = require("express");
 const createError = require("http-errors");
 const mongoose = require("mongoose");
@@ -10,6 +9,9 @@ const path = require("path");
 
 require("./models/Entry");
 require("./models/User");
+
+const authRouter = require("./routes/auth");
+const usersRouter = require("./routes/users");
 
 mongoose
   .connect(keys.mongoURI, {
@@ -27,8 +29,9 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
-
 require("./config/passport")(passport);
-require("./routes/users")(app);
+
+app.use("/api/auth", authRouter);
+app.use("/api/users", usersRouter);
 
 module.exports = app;

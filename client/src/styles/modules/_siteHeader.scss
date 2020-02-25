@@ -12,11 +12,11 @@ div#site-header {
   z-index: 99;
 
   a {
-    color: black;
+    color: $text-primary-color;
     font-size: 1.3em;
 
     &.inactive {
-      color: $grey;
+      color: $text-secondary-color;
     }
   }
 

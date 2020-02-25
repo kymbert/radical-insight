@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,700|Montserrat:300,700&display=swap");
+
+$mdc-typography-styles-headline1: (
+  font-family: unquote("Montserrat"),
+  font-size: 97
+);
+$mdc-typography-styles-headline2: (
+  font-family: unquote("Montserrat"),
+  font-size: 61
+);
+$mdc-typography-styles-headline3: (
+  font-family: unquote("Montserrat"),
+  font-size: 48
+);
+$mdc-typography-styles-headline4: (
+  font-family: unquote("Montserrat"),
+  font-size: 34
+);
+$mdc-typography-styles-headline5: (
+  font-family: unquote("Montserrat"),
+  font-size: 24
+);
+$mdc-typography-styles-headline6: (
+  font-family: unquote("Montserrat"),
+  font-size: 20
+);
+$mdc-typography-styles-body1: (
+  font-family: unquote("Lato"),
+  font-size: 17
+);
+$mdc-typography-styles-body2: (
+  font-family: unquote("Lato"),
+  font-size: 15
+);
+$mdc-typography-styles-subtitle1: (
+  font-family: unquote("Montserrat"),
+  font-size: 16
+);
+$mdc-typography-styles-subtitle2: (
+  font-family: unquote("Montserrat"),
+  font-size: 14
+);
+$mdc-typography-styles-button: (
+  font-family: unquote("Lato"),
+  font-size: 15
+);
+$mdc-typography-styles-overline: (
+  font-family: unquote("Lato"),
+  font-size: 10
+);
+$mdc-typography-styles-caption: (
+  font-family: unquote("Lato"),
+  font-size: 13
+);
+
+$headline-family: unquote("Montserrat");
+$body-family: unquote("Lato");
+
+$font-size-x-large: 34px;
+$font-size-large: 20px;
+$font-size-normal: 16px;
+$font-size-small: 14px;
+$font-size-x-small: 12px;
+
+@mixin headline {
+  font-family: $headline-family;
+  font-weight: 300;
+  text-align: center;
+}
+
+@mixin body {
+  font-family: $body-family;
+  font-weight: 300;
+  text-align: left;
+}
+
+@mixin headline1 {
+  @include headline;
+  font-size: 97px;
+  letter-spacing: -1.5px;
+}
+
+@mixin headline2 {
+  @include headline;
+  font-size: 61px;
+  letter-spacing: -0.5px;
+}
+
+@mixin headline3 {
+  @include headline;
+  font-size: $font-size-x-large;
+}
+
+@mixin headline4 {
+  @include headline;
+  font-size: 34px;
+  letter-spacing: 0.25px;
+}
+
+@mixin headline5 {
+  @include headline;
+  font-size: 24px;
+}
+
+@mixin headline6 {
+  @include headline;
+  font-size: $font-size-large;
+  letter-spacing: 0.15px;
+}
+
+@mixin body1 {
+  @include body;
+  font-size: $font-size-normal;
+  letter-spacing: 0.5px;
+}
+
+@mixin body2 {
+  @include body;
+  font-size: $font-size-normal;
+  letter-spacing: 0.25px;
+  color: $text-secondary-color;
+}
+
+@mixin button-text {
+  font-family: $body-family;
+  font-size: $font-size-large;
+  font-variant-caps: all-small-caps;
+}
+
+@mixin caption-text {
+  font-family: $body-family;
+  font-size: $font-size-x-small;
+  font-variant-caps: all-small-caps;
+  color: $text-secondary-color;
+}
+
+@mixin error-text {
+  font-family: $body-family;
+  font-size: $font-size-small;
+  font-variant-caps: all-small-caps;
+  color: $error-color;
+}
+
+html,
+body {
+  @include body1;
+  font-size: 100%;
+}
+
+h1 {
+  @include headline1;
+}
+h2 {
+  @include headline2;
+}
+h3 {
+  @include headline3;
+}
+h4 {
+  @include headline4;
+}
+h5 {
+  @include headline5;
+}
+h6 {
+  @include headline6;
+}
+
+a {
+  @include button-text;
+  color: $primary-color;
+}
+
+.caption {
+  @include caption-text;
+  height: 1em;
+  margin-top: 0px;
+  padding-top: ($font-size-small / 10);
+}
+.error {
+  @include error-text;
+}
+.text-body-2 {
+  @include body2;
+}

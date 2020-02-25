@@ -31,7 +31,7 @@ module.exports = {
     data.password2 = !isEmpty(data.password2) ? data.password2 : "";
 
     if (Validator.isEmpty(data.name)) {
-      errors.name = "Display name is required.";
+      errors.name = "Name is required.";
     }
     if (Validator.isEmpty(data.email)) {
       errors.email = "Email is required.";

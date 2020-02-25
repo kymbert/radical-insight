@@ -1,41 +1,544 @@
-@media (max-width: 768px) {
-  div.content,
-  div.landing-content {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-@media (min-width: 768px) {
-  div.content,
-  div.landing-content {
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-@media (min-width: 850px) {
-  div.content,
-  div.landing-content {
-    max-width: 850px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+@import url("https://fonts.googleapis.com/css?family=Lato:300,700|Montserrat:300,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,700|Montserrat:300,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,700|Montserrat:300,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,700|Montserrat:300,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,700|Montserrat:300,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,700|Montserrat:300,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,700|Montserrat:300,700&display=swap");
+html,
+body {
+  font-family: Lato;
+  font-weight: 300;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  font-size: 100%;
 }
 
-div.section {
-  font-size: 1.2em;
+h1 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 97px;
+  letter-spacing: -1.5px;
+}
+
+h2 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 61px;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 34px;
+}
+
+h4 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 34px;
+  letter-spacing: 0.25px;
+}
+
+h5 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 24px;
+}
+
+h6 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0.15px;
+}
+
+a {
+  font-family: Lato;
+  font-size: 20px;
+  font-variant-caps: all-small-caps;
+  color: #6494ed;
+}
+
+.caption {
+  font-family: Lato;
+  font-size: 12px;
+  font-variant-caps: all-small-caps;
+  color: #68686f;
+  height: 1em;
+  margin-top: 0px;
+  padding-top: 1.4px;
+}
+
+.error {
+  font-family: Lato;
+  font-size: 14px;
+  font-variant-caps: all-small-caps;
+  color: #b00020;
+}
+
+.text-body-2 {
+  font-family: Lato;
+  font-weight: 300;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.25px;
+  color: #68686f;
+}
+
+html,
+body {
+  font-family: Lato;
+  font-weight: 300;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  font-size: 100%;
+}
+
+h1 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 97px;
+  letter-spacing: -1.5px;
+}
+
+h2 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 61px;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 34px;
+}
+
+h4 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 34px;
+  letter-spacing: 0.25px;
+}
+
+h5 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 24px;
+}
+
+h6 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0.15px;
+}
+
+a {
+  font-family: Lato;
+  font-size: 20px;
+  font-variant-caps: all-small-caps;
+  color: #6494ed;
+}
+
+.caption {
+  font-family: Lato;
+  font-size: 12px;
+  font-variant-caps: all-small-caps;
+  color: #68686f;
+  height: 1em;
+  margin-top: 0px;
+  padding-top: 1.4px;
+}
+
+.error {
+  font-family: Lato;
+  font-size: 14px;
+  font-variant-caps: all-small-caps;
+  color: #b00020;
+}
+
+.text-body-2 {
+  font-family: Lato;
+  font-weight: 300;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.25px;
+  color: #68686f;
+}
+
+.btn-primary {
+  font-family: Lato;
+  font-size: 20px;
+  font-variant-caps: all-small-caps;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  margin-top: 0.25em;
+  margin-right: 0.25em;
+  padding: 8px;
+  background-color: #2667ba;
+  color: #f6f6ff;
+}
+
+.btn-secondary {
+  font-family: Lato;
+  font-size: 20px;
+  font-variant-caps: all-small-caps;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  margin-top: 0.25em;
+  margin-right: 0.25em;
+  padding: 8px;
+  background-color: #9ac4ff;
+  color: #000000;
+}
+
+html,
+body {
+  font-family: Lato;
+  font-weight: 300;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  font-size: 100%;
+}
+
+h1 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 97px;
+  letter-spacing: -1.5px;
+}
+
+h2 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 61px;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 34px;
+}
+
+h4 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 34px;
+  letter-spacing: 0.25px;
+}
+
+h5 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 24px;
+}
+
+h6 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0.15px;
+}
+
+a {
+  font-family: Lato;
+  font-size: 20px;
+  font-variant-caps: all-small-caps;
+  color: #6494ed;
+}
+
+.caption {
+  font-family: Lato;
+  font-size: 12px;
+  font-variant-caps: all-small-caps;
+  color: #68686f;
+  height: 1em;
+  margin-top: 0px;
+  padding-top: 1.4px;
+}
+
+.error {
+  font-family: Lato;
+  font-size: 14px;
+  font-variant-caps: all-small-caps;
+  color: #b00020;
+}
+
+.text-body-2 {
+  font-family: Lato;
+  font-weight: 300;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.25px;
+  color: #68686f;
+}
+
+div.about div#kyle-imbertson-pic {
+  float: right;
+}
+
+html,
+body {
+  font-family: Lato;
+  font-weight: 300;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  font-size: 100%;
+}
+
+h1 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 97px;
+  letter-spacing: -1.5px;
+}
+
+h2 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 61px;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 34px;
+}
+
+h4 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 34px;
+  letter-spacing: 0.25px;
+}
+
+h5 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 24px;
+}
+
+h6 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0.15px;
+}
+
+a {
+  font-family: Lato;
+  font-size: 20px;
+  font-variant-caps: all-small-caps;
+  color: #6494ed;
+}
+
+.caption {
+  font-family: Lato;
+  font-size: 12px;
+  font-variant-caps: all-small-caps;
+  color: #68686f;
+  height: 1em;
+  margin-top: 0px;
+  padding-top: 1.4px;
+}
+
+.error {
+  font-family: Lato;
+  font-size: 14px;
+  font-variant-caps: all-small-caps;
+  color: #b00020;
+}
+
+.text-body-2 {
+  font-family: Lato;
+  font-weight: 300;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.25px;
+  color: #68686f;
+}
+
+div#contact-page div.contact-form {
+  margin-bottom: 5em;
+  margin-left: 5em;
+}
+div#contact-page div.contact-form p {
+  font-family: Lato;
+  font-size: 20px;
+  font-variant-caps: all-small-caps;
+  font-size: 20px;
+}
+div#contact-page div.contact-form input {
+  background-color: #f6f6ff;
+  border: none;
+  border-bottom: 1px solid black;
+  color: #2667ba;
+  font-size: 20px;
+  font-weight: 900;
+  width: 22em;
+}
+div#contact-page div.contact-form textarea {
+  width: 40em;
+  height: 24em;
+  background-color: #ffffff;
+  border: 1px solid black;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  resize: none;
+  font-family: Lato;
+  font-weight: 300;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.25px;
+  color: #68686f;
+}
+div#contact-page div.contact-form .submit-buttons {
+  width: 40em;
+}
+div#contact-page div.contact-form .submit-buttons button {
+  float: none;
+}
+
+html,
+body {
+  font-family: Lato;
+  font-weight: 300;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  font-size: 100%;
+}
+
+h1 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 97px;
+  letter-spacing: -1.5px;
+}
+
+h2 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 61px;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 34px;
+}
+
+h4 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 34px;
+  letter-spacing: 0.25px;
+}
+
+h5 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 24px;
+}
+
+h6 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0.15px;
+}
+
+a {
+  font-family: Lato;
+  font-size: 20px;
+  font-variant-caps: all-small-caps;
+  color: #6494ed;
+}
+
+.caption {
+  font-family: Lato;
+  font-size: 12px;
+  font-variant-caps: all-small-caps;
+  color: #68686f;
+  height: 1em;
+  margin-top: 0px;
+  padding-top: 1.4px;
+}
+
+.error {
+  font-family: Lato;
+  font-size: 14px;
+  font-variant-caps: all-small-caps;
+  color: #b00020;
+}
+
+.text-body-2 {
+  font-family: Lato;
+  font-weight: 300;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.25px;
+  color: #68686f;
+}
+
+div.landing-page div.section {
   padding: 2em;
 }
 @media (max-device-width: 768px) {
-  div.section {
-    font-size: 1em;
+  div.landing-page div.section {
     padding: 1em;
   }
 }
-
-div#hero {
-  background-image: url("../images/peeking-little-cat-landscape.jpg");
+div.landing-page .text-card {
+  background-color: transparent;
+  border: none;
+}
+div.landing-page div#hero {
+  background-image: url("../images/nicholas-barbaros.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -46,38 +549,32 @@ div#hero {
   margin-top: -2vh;
   margin-left: -2vw;
   margin-bottom: 3vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
   padding: 2em 0;
   position: relative;
   text-align: center;
 }
 @media (max-device-width: 768px) {
-  div#hero {
+  div.landing-page div#hero {
     background-image: url("../images/peeking-little-cat.jpg");
     background-attachment: scroll;
   }
 }
-div#hero div.heading {
+div.landing-page div#hero div.heading {
   position: absolute;
   width: 100%;
-  top: 40%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   cursor: default;
 }
-div#hero div.heading span.em {
+div.landing-page div#hero div.heading span.em {
   color: white;
   font-style: italic;
 }
-div#hero p.small-text {
-  position: absolute;
-  top: 90%;
-  right: 5%;
-  color: #666;
-  width: max-content;
-  font-size: 1em;
-}
-
-div#why {
+div.landing-page div#why {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
     url("../images/smartphone.jpg");
   background-size: cover;
@@ -86,116 +583,240 @@ div#why {
   height: auto;
   padding-bottom: 3em;
 }
+div.landing-page div#why .text-card {
+  color: #f6f6ff;
+}
 @media (max-device-width: 768px) {
-  div#why {
+  div.landing-page div#why {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
       url("../images/smartphone-mobile.jpg");
     background-attachment: scroll;
   }
 }
-
-ul#get-involved {
+div.landing-page ul#get-involved {
   list-style: none;
   width: 75%;
   margin-left: auto;
   margin-right: auto;
 }
-ul#get-involved li {
-  font-size: 1.3em;
+div.landing-page ul#get-involved li {
   margin-bottom: 0.7em;
 }
-ul#get-involved li:last-child {
+div.landing-page ul#get-involved li:last-child {
   margin-bottom: 0em;
 }
 @media (max-device-width: 768px) {
-  ul#get-involved {
+  div.landing-page ul#get-involved {
     width: 100%;
     margin-left: -2.5em;
   }
 }
 
-html {
-  font-family: "lato", sans-serif;
+html,
+body {
+  font-family: Lato;
+  font-weight: 300;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.5px;
   font-size: 100%;
 }
 
-h1,
-h2,
-h3 {
-  text-align: center;
-}
-
 h1 {
-  font-family: "lane-upper", sans-serif;
-  font-size: 5em;
-}
-@media (max-width: 768px) {
-  h1 {
-    font-size: 4em;
-  }
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 97px;
+  letter-spacing: -1.5px;
 }
 
 h2 {
-  font-family: "lane-narrow", sans-serif;
-  font-size: 2em;
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 61px;
+  letter-spacing: -0.5px;
 }
 
 h3 {
-  font-family: "lane-narrow", sans-serif;
-  font-size: 2em;
-  color: indianred;
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 34px;
+}
+
+h4 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 34px;
+  letter-spacing: 0.25px;
+}
+
+h5 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 24px;
+}
+
+h6 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0.15px;
 }
 
 a {
-  text-decoration: none;
-  color: cornflowerblue;
+  font-family: Lato;
+  font-size: 20px;
+  font-variant-caps: all-small-caps;
+  color: #6494ed;
 }
 
-b {
-  color: indianred;
+.caption {
+  font-family: Lato;
+  font-size: 12px;
+  font-variant-caps: all-small-caps;
+  color: #68686f;
+  height: 1em;
+  margin-top: 0px;
+  padding-top: 1.4px;
 }
 
-p {
-  font-size: 1.3em;
+.error {
+  font-family: Lato;
+  font-size: 14px;
+  font-variant-caps: all-small-caps;
+  color: #b00020;
 }
 
-div.resources #title {
-  margin-top: 5em;
+.text-body-2 {
+  font-family: Lato;
+  font-weight: 300;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.25px;
+  color: #68686f;
 }
 
-#footer-grid {
-  width: 100%;
-  display: inline-grid;
+#log-in-page #log-in-form {
+  width: 50%;
+  margin-left: 25%;
+}
+#log-in-page #log-in-form .submit-buttons {
+  float: right;
+  margin-top: 1em;
+  margin-right: 0px !important;
+}
+#log-in-page .need-account {
   text-align: center;
-  font-size: 0.8em;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
-div#site-header {
-  position: absolute;
-  top: 0%;
+html,
+body {
+  font-family: Lato;
+  font-weight: 300;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  font-size: 100%;
+}
+
+h1 {
+  font-family: Montserrat;
+  font-weight: 300;
   text-align: center;
-  padding-top: 1em;
+  font-size: 97px;
+  letter-spacing: -1.5px;
+}
+
+h2 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 61px;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 34px;
+}
+
+h4 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 34px;
+  letter-spacing: 0.25px;
+}
+
+h5 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 24px;
+}
+
+h6 {
+  font-family: Montserrat;
+  font-weight: 300;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0.15px;
+}
+
+a {
+  font-family: Lato;
+  font-size: 20px;
+  font-variant-caps: all-small-caps;
+  color: #6494ed;
+}
+
+.caption {
+  font-family: Lato;
+  font-size: 12px;
+  font-variant-caps: all-small-caps;
+  color: #68686f;
+  height: 1em;
+  margin-top: 0px;
+  padding-top: 1.4px;
+}
+
+.error {
+  font-family: Lato;
+  font-size: 14px;
+  font-variant-caps: all-small-caps;
+  color: #b00020;
+}
+
+.text-body-2 {
+  font-family: Lato;
+  font-weight: 300;
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.25px;
+  color: #68686f;
+}
+
+#sign-up-form {
+  width: 80%;
+  margin-left: 10%;
+}
+#sign-up-form .error-field {
+  display: inline-block;
   width: 100%;
-  display: inline-grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
-  z-index: 99;
+  text-align: right;
 }
-div#site-header a {
-  color: black;
-  font-size: 1.3em;
-}
-div#site-header a.inactive {
-  color: #666;
-}
-@media (max-width: 768px) {
-  div#site-header {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+#sign-up-form .btn-submit {
+  display: inline-block;
+  float: right;
 }
 
 .item-1 {
@@ -226,12 +847,16 @@ div#site-header a.inactive {
 html {
   height: 100%;
   width: 100%;
-  background-color: ghostwhite;
 }
 
-span.em {
-  color: white;
-  font-style: italic;
+body {
+  background-color: #f6f6ff;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#footer {
+  bottom: 0px;
 }
 
 /*# sourceMappingURL=main.css.map */

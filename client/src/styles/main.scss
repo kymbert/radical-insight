@@ -1,13 +1,10 @@
-@import "./modules/_breakpoints";
-@import "./modules/_colors";
-@import "./modules/_divContent";
-@import "./modules/_fonts";
-@import "./modules/_landingPage";
-@import "./modules/_textStyles";
-@import "./modules/resourcePage";
-@import "./modules/_siteFooter";
-@import "./modules/_siteHeader";
-@import "./modules/_variables";
+@import "variables";
+@import "buttons";
+@import "about.container";
+@import "contact.container";
+@import "landing.container";
+@import "login.container";
+@import "signup.container";
 
 @for $i from 1 to 6 {
   .item-#{$i} {
@@ -19,10 +16,14 @@
 html {
   height: 100%;
   width: 100%;
-  background-color: ghostwhite;
 }
 
-span.em {
-  color: white;
-  font-style: italic;
+body {
+  background-color: $background-color;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#footer {
+  bottom: 0px;
 }
