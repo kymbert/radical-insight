@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
-const EntrySchema = require("./Entry");
-const UserLogSchema = require("./UserLog");
 const { Schema } = mongoose;
+const JournalSchema = require("./Journal");
+const ReminderSchema = require("./Reminder");
+const UserLogSchema = require("./UserLog");
 
 const UserSchema = new Schema({
   agreedToTerms: Date,
@@ -27,9 +28,9 @@ const UserSchema = new Schema({
   phone: {
     type: String
   },
-  journals: [],
+  journals: [JournalSchema],
   logs: [UserLogSchema],
-  reminders: []
+  reminders: [ReminderSchema]
 });
 
 /**
