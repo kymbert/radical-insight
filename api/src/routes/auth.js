@@ -18,9 +18,12 @@ router.get(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     res.json({
-      id: req.user.id,
-      name: req.user.name,
-      email: req.user.email
+      status: "success",
+      data: {
+        id: req.user.id,
+        name: req.user.name,
+        email: req.user.email
+      }
     });
   }
 );
@@ -29,12 +32,20 @@ router.post("/login", (req, res) => {
   console.log(req.body);
   const { errors, isValid } = validateLoginInput(req.body);
   if (!isValid) {
-    return res.status(400).json(errors);
+    return res.status(400).json({
+      status: "fail",
+      data: errors
+    });
   }
   const { email, password } = req.body;
   User.findOne({ email }).then(user => {
     if (!user) {
-      return res.status(404).json({ emailnotfound: "Email not found." });
+      return res.status(404).json({
+        status: "fail",
+        data: {
+          email: "No account with that email exists."
+        }
+      });
     }
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
@@ -53,19 +64,31 @@ router.post("/login", (req, res) => {
                 expiresIn: 31556926
               },
               (err, token) => {
-                return res.json({
-                  success: true,
-                  token: "Bearer " + token,
-                  user: savedUser
-                });
+                if (err) {
+                  return res.status(500).json({
+                    status: "error",
+                    message: err.message
+                  });
+                } else {
+                  return res.json({
+                    status: "success",
+                    data: {
+                      token: "Bearer " + token,
+                      user: savedUser.toJSON()
+                    }
+                  });
+                }
               }
             );
           })
           .catch(err => console.log(err));
       } else {
-        return res
-          .status(400)
-          .json({ passwordincorrect: "Incorrect password." });
+        return res.status(400).json({
+          status: "fail",
+          data: {
+            message: "Incorrect email or password."
+          }
+        });
       }
     });
   });
@@ -75,16 +98,18 @@ router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
   if (!isValid) {
     return res.status(400).json({
-      ...errors,
-      success: false
+      status: "fail",
+      data: errors
     });
   }
 
   User.findOne({ email: req.body.email }).then(user => {
     if (user) {
       return res.status(400).json({
-        success: false,
-        email: "Email already exists."
+        status: "fail",
+        data: {
+          email: "An account with that email already exists."
+        }
       });
     }
     const newUser = new User({
@@ -95,12 +120,27 @@ router.post("/register", (req, res) => {
     });
     bcrypt.genSalt(10, (err, salt) => {
       bcrypt.hash(newUser.password, salt, (err, hash) => {
-        if (err) throw err;
+        if (err) {
+          return res.status(500).json({
+            status: "error",
+            message: err.message
+          });
+        }
         newUser.password = hash;
         newUser
           .save()
-          .then(user => res.json(user))
-          .catch(err => console.log(err));
+          .then(user =>
+            res.json({
+              status: "success",
+              data: user.toJSON
+            })
+          )
+          .catch(err =>
+            res.status(500).json({
+              status: "error",
+              message: err.message
+            })
+          );
       });
     });
   });

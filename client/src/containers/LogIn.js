@@ -43,9 +43,17 @@ class LogIn extends React.Component {
     }).then(response => {
       if (response.ok) {
         response.json().then(json => {
-          this.props.updateToken({ token: json.token });
-          this.props.updateUser({ ...json.user });
+          this.props.updateToken({ token: json.data.token });
+          this.props.updateUser(json.data.user);
           window.location = "/";
+        });
+      } else {
+        response.json().then(json => {
+          if (json.status === "error") {
+            document.getElementById("error-text").innerText = json.message;
+          } else {
+            document.getElementById("error-text").innerText = json.data.message;
+          }
         });
       }
     });
@@ -56,6 +64,7 @@ class LogIn extends React.Component {
       <div id="log-in-page">
         <h3>Sign In</h3>
         <div id="log-in-form">
+          <div id="error-text" className="error" />
           <TextInput type="email" onChange={this.handleEmailChange}>
             email
           </TextInput>

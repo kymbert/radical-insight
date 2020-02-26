@@ -153,7 +153,7 @@ class SignUp extends React.Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ reset, updateToken, updateUser }, dispatch);
+  return bindActionCreators({ reset, updateUser, updateToken }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(SignUp);

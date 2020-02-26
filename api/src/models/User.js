@@ -1,18 +1,19 @@
 const mongoose = require("mongoose");
 const EntrySchema = require("./Entry");
+const UserLogSchema = require("./UserLog");
 const { Schema } = mongoose;
 
 const UserSchema = new Schema({
   agreedToTerms: Date,
-  name: {
-    type: String,
-    required: true
-  },
   email: {
     type: String,
     required: true,
     unique: true,
     dropDups: true
+  },
+  name: {
+    type: String,
+    required: true
   },
   lastLogin: {
     type: Date,
@@ -20,11 +21,30 @@ const UserSchema = new Schema({
     default: Date.now()
   },
   password: {
-    // TODO: password encryption.
     type: String,
     required: true
   },
-  entries: [EntrySchema]
+  phone: {
+    type: String
+  },
+  journals: [],
+  logs: [UserLogSchema],
+  reminders: []
 });
+
+/**
+ * toJSON transform
+ */
+UserSchema.options.toJSON = {
+  transform: function(doc, ret, options) {
+    ret.id = ret._id;
+    delete ret._id;
+    delete ret.password;
+    delete ret.journals;
+    delete ret.logs;
+    delete ret.reminders;
+    return ret;
+  }
+};
 
 mongoose.model("users", UserSchema);

@@ -18,7 +18,9 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    quotes: ["warn", "double"]
+    quotes: ["warn", "double"],
+    "react/no-unescaped-entities": "off",
+    "react/prop-types": "off"
   },
   overrides: []
 };
