@@ -12,12 +12,7 @@ class AboutPage extends React.Component {
               A little background provided by Kyle Imbertson, founder of Radical
               Insight, in January 2019:
             </p>
-            <div
-              style={{
-                margin: "0 auto",
-                width: "400px"
-              }}
-            >
+            <div id="kyle-imbertson-pic">
               <img
                 src="/images/kyle-imbertson-400.png"
                 alt="Kyle sitting on a couch."

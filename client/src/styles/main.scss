@@ -5,6 +5,7 @@
 @import "landing.container";
 @import "login.container";
 @import "signup.container";
+@import "topNav.module";
 
 @for $i from 1 to 6 {
   .item-#{$i} {

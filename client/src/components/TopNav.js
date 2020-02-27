@@ -11,11 +11,16 @@ class TopNav extends React.Component {
   toggleMenu(event) {
     event.preventDefault();
     document.getElementById("top-nav").classList.toggle("responsive");
+    document.getElementById("menu-icon").classList.toggle("fa-bars");
+    document.getElementById("menu-icon").classList.toggle("fa-times");
   }
 
   render() {
     return (
-      <div id="top-nav" className={topNav}>
+      <div id="top-nav">
+        <span className="icon" onClick={this.toggleMenu}>
+          <i id="menu-icon" className="fas fa-bars"></i>
+        </span>
         <a id="home" href="/">
           Home
         </a>
@@ -29,9 +34,6 @@ class TopNav extends React.Component {
           Contact
         </a>
         <SignInButton />
-        <span className="icon" onClick={this.toggleMenu}>
-          <i className="fa fa-bars">menu</i>
-        </span>
       </div>
     );
   }

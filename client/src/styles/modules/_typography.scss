@@ -56,11 +56,104 @@ $mdc-typography-styles-caption: (
 $headline-family: unquote("Montserrat");
 $body-family: unquote("Lato");
 
-$font-size-x-large: 34px;
-$font-size-large: 20px;
-$font-size-normal: 16px;
-$font-size-small: 14px;
-$font-size-x-small: 12px;
+/// least-squares-fit
+/// Calculate the least square fit linear regression of provided values
+/// @param {map} $map - A SASS map of viewport width and size value combinations
+/// @return Linear equation as a calc() function
+/// @example
+///   font-size: least-squares-fit((576: 24, 768: 24, 992: 34));
+@function least-squares-fit($map) {
+  // Get the number of provided breakpoints
+  $length: length(map-keys($map));
+
+  // Error if the number of breakpoints is < 2
+  @if ($length < 2) {
+    @error "leastSquaresFit() $map must be at least 2 values";
+  }
+
+  // Calculate the Means
+  $resTotal: 0;
+  $valueTotal: 0;
+  @each $res, $value in $map {
+    $resTotal: $resTotal + $res;
+    $valueTotal: $valueTotal + $value;
+  }
+  $resMean: $resTotal/$length;
+  $valueMean: $valueTotal/$length;
+
+  // Calculate some other stuff
+  $multipliedDiff: 0;
+  $squaredDiff: 0;
+  @each $res, $value in $map {
+    // Differences from means
+    $resDiff: $res - $resMean;
+    $valueDiff: $value - $valueMean;
+
+    // Sum of multiplied differences
+    $multipliedDiff: $multipliedDiff + ($resDiff * $valueDiff);
+
+    // Sum of squared resolution differences
+    $squaredDiff: $squaredDiff + ($resDiff * $resDiff);
+  }
+
+  // Calculate the Slope
+  $m: $multipliedDiff / $squaredDiff;
+
+  // Calculate the Y-Intercept
+  $b: $valueMean - ($m * $resMean);
+
+  // Return the CSS calc equation
+  @return calc(#{$m * 100}vw + #{$b}px);
+}
+
+$font-size-title: least-squares-fit(
+  (
+    576: 50,
+    768: 61,
+    992: 97
+  )
+);
+$font-size-x-large: least-squares-fit(
+  (
+    576: 42,
+    768: 50,
+    992: 61
+  )
+);
+$font-size-large: least-squares-fit(
+  (
+    576: 34,
+    768: 42,
+    992: 50
+  )
+);
+$font-size-normal: least-squares-fit(
+  (
+    576: 16,
+    768: 20,
+    992: 24
+  )
+);
+$font-size-small: least-squares-fit(
+  (
+    576: 14,
+    768: 16,
+    992: 20
+  )
+);
+$font-size-x-small: least-squares-fit(
+  (
+    576: 12,
+    768: 14,
+    992: 16
+  )
+);
+
+// $font-size-x-large: 34px;
+// $font-size-large: 20px;
+// $font-size-normal: 16px;
+// $font-size-small: 14px;
+// $font-size-x-small: 12px;
 
 @mixin headline {
   font-family: $headline-family;
@@ -76,13 +169,13 @@ $font-size-x-small: 12px;
 
 @mixin headline1 {
   @include headline;
-  font-size: 97px;
+  font-size: $font-size-title;
   letter-spacing: -1.5px;
 }
 
 @mixin headline2 {
   @include headline;
-  font-size: 61px;
+  font-size: $font-size-x-large;
   letter-spacing: -0.5px;
 }
 
@@ -93,13 +186,13 @@ $font-size-x-small: 12px;
 
 @mixin headline4 {
   @include headline;
-  font-size: 34px;
+  font-size: $font-size-x-large;
   letter-spacing: 0.25px;
 }
 
 @mixin headline5 {
   @include headline;
-  font-size: 24px;
+  font-size: $font-size-large;
 }
 
 @mixin headline6 {
@@ -168,6 +261,8 @@ h6 {
 
 a {
   @include button-text;
+  font-size: $font-size-normal;
+  text-decoration: none;
   color: $primary-color;
 }
 

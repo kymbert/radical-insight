@@ -4,7 +4,7 @@ div.landing-page {
   div.section {
     padding: 2em;
 
-    @media (max-device-width: $bp-smartphone) {
+    @media (max-width: $break-smartphone) {
       padding: 1em;
     }
   }
@@ -32,8 +32,7 @@ div.landing-page {
     left: 0px;
     padding: 2em 0;
 
-    @media (max-device-width: $bp-smartphone) {
-      background-image: url("../images/peeking-little-cat.jpg");
+    @media (max-width: $break-smartphone) {
       background-attachment: scroll;
     }
 
@@ -68,7 +67,7 @@ div.landing-page {
       color: $text-inverted-color;
     }
 
-    @media (max-device-width: $bp-smartphone) {
+    @media (max-width: $break-smartphone) {
       background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
         url("../images/smartphone-mobile.jpg");
       background-attachment: scroll;
@@ -86,7 +85,7 @@ div.landing-page {
     li:last-child {
       margin-bottom: 0em;
     }
-    @media (max-device-width: $bp-smartphone) {
+    @media (max-width: $break-smartphone) {
       width: 100%;
       margin-left: -2.5em;
     }

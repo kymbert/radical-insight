@@ -20,7 +20,7 @@ div#site-header {
     }
   }
 
-  @media (max-width: $bp-smartphone) {
+  @media (max-width: $break-smartphone) {
     width: 90%;
     margin-left: auto;
     margin-right: auto;

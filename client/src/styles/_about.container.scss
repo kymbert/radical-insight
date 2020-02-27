@@ -2,6 +2,14 @@
 
 div.about {
   div#kyle-imbertson-pic {
-    float: right;
+    margin: 0 auto;
+    max-width: 400px;
+    @media (max-width: 450px) {
+      margin: auto;
+      img {
+        width: 90vw;
+        height: auto;
+      }
+    }
   }
 }

@@ -1,6 +1,6 @@
-@import "../styles/variables";
+@import "./variables";
 
-.topNav {
+#top-nav {
   background-color: transparent;
   padding: 4px;
   overflow: hidden;
@@ -40,21 +40,34 @@
     display: none;
   }
 
-  @media (max-device-width: $break-smartphone) {
+  @media (max-width: $break-smartphone) {
     span {
-      float: right;
       display: block;
+      margin-top: 0.5em;
+      margin-left: 0.5em;
+      font-size: 2em;
     }
 
-    a:not(:first-child) {
+    a {
       display: none;
     }
 
     &.responsive {
+      background-color: $secondary-color-transparent;
+      max-width: 80vw;
+      @include border-mixin;
+
       a {
         float: none;
         display: block;
         text-align: left;
+        background-color: $surface-color;
+        color: $primary-color;
+        @include border-mixin;
+
+        &#sign-in {
+          float: left;
+        }
       }
     }
   }
