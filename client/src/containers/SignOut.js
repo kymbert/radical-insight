@@ -1,9 +1,9 @@
 import React from "react";
-import { reset } from "../actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import { reset } from "../actions";
 
-class LogOut extends React.Component {
+class SignOut extends React.Component {
   componentDidMount() {
     this.props.reset();
     window.location = "/";
@@ -29,4 +29,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ reset }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(LogOut);
+export default connect(null, mapDispatchToProps)(SignOut);

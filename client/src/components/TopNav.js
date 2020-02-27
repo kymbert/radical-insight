@@ -1,6 +1,5 @@
 import React from "react";
 import SignInButton from "./SignInButton";
-import { topNav } from "./TopNav.module.scss";
 
 class TopNav extends React.Component {
   constructor(props) {

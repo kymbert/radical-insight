@@ -5,7 +5,7 @@ import TextInput from "../components/TextInput";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-class LogIn extends React.Component {
+class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -90,4 +90,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ reset, updateToken, updateUser }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(LogIn);
+export default connect(null, mapDispatchToProps)(SignIn);

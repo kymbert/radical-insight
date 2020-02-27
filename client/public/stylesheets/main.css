@@ -11,16 +11,15 @@ body {
   font-family: Lato;
   font-weight: 300;
   text-align: left;
-  font-size: calc(1.9192913386vw + 5.0551181102px);
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   letter-spacing: 0.5px;
-  font-size: 100%;
 }
 
 h1 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(11.4296259843vw + -19.6653543307px);
+  font-size: calc(2.7989821883vw + 39.5038167939px);
   letter-spacing: -1.5px;
 }
 
@@ -28,7 +27,7 @@ h2 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 61px;
+  font-size: calc(3.0534351145vw + 8.5496183206px);
   letter-spacing: -0.5px;
 }
 
@@ -36,14 +35,14 @@ h3 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(4.5767716535vw + 15.3622047244px);
+  font-size: calc(3.0534351145vw + 8.5496183206px);
 }
 
 h4 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 34px;
+  font-size: calc(3.0534351145vw + 8.5496183206px);
   letter-spacing: 0.25px;
 }
 
@@ -51,46 +50,57 @@ h5 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 24px;
+  font-size: calc(2.0356234097vw + 8.3664122137px);
 }
 
 h6 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
+  font-size: calc(2.0356234097vw + 8.3664122137px);
   letter-spacing: 0.15px;
 }
 
 a {
   font-family: Lato;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
   font-variant-caps: all-small-caps;
-  color: #6494ed;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
+  text-decoration: none;
+  color: #2667ba;
+}
+
+button {
+  font-family: Lato;
+  font-variant-caps: all-small-caps;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
 }
 
 .caption {
   font-family: Lato;
-  font-size: 12px;
+  font-size: calc(0.5089058524vw + 8.0916030534px);
   font-variant-caps: all-small-caps;
   color: #68686f;
   height: 1em;
   margin-top: 0px;
-  padding-top: 1.4px;
+  padding-top: calc(0.5089058524vw + 10.0916030534px) / 10;
 }
 
 .error {
   font-family: Lato;
-  font-size: 14px;
+  font-size: calc(0.5089058524vw + 10.0916030534px);
   font-variant-caps: all-small-caps;
   color: #b00020;
+}
+
+.small-text {
+  font-size: calc(0.5089058524vw + 6.0916030534px);
 }
 
 .text-body-2 {
   font-family: Lato;
   font-weight: 300;
   text-align: left;
-  font-size: calc(1.9192913386vw + 5.0551181102px);
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   letter-spacing: 0.25px;
   color: #68686f;
 }
@@ -100,16 +110,15 @@ body {
   font-family: Lato;
   font-weight: 300;
   text-align: left;
-  font-size: calc(1.9192913386vw + 5.0551181102px);
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   letter-spacing: 0.5px;
-  font-size: 100%;
 }
 
 h1 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(11.4296259843vw + -19.6653543307px);
+  font-size: calc(2.7989821883vw + 39.5038167939px);
   letter-spacing: -1.5px;
 }
 
@@ -117,7 +126,7 @@ h2 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 61px;
+  font-size: calc(3.0534351145vw + 8.5496183206px);
   letter-spacing: -0.5px;
 }
 
@@ -125,14 +134,14 @@ h3 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(4.5767716535vw + 15.3622047244px);
+  font-size: calc(3.0534351145vw + 8.5496183206px);
 }
 
 h4 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 34px;
+  font-size: calc(3.0534351145vw + 8.5496183206px);
   letter-spacing: 0.25px;
 }
 
@@ -140,53 +149,64 @@ h5 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 24px;
+  font-size: calc(2.0356234097vw + 8.3664122137px);
 }
 
 h6 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
+  font-size: calc(2.0356234097vw + 8.3664122137px);
   letter-spacing: 0.15px;
 }
 
 a {
   font-family: Lato;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
   font-variant-caps: all-small-caps;
-  color: #6494ed;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
+  text-decoration: none;
+  color: #2667ba;
+}
+
+button {
+  font-family: Lato;
+  font-variant-caps: all-small-caps;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
 }
 
 .caption {
   font-family: Lato;
-  font-size: 12px;
+  font-size: calc(0.5089058524vw + 8.0916030534px);
   font-variant-caps: all-small-caps;
   color: #68686f;
   height: 1em;
   margin-top: 0px;
-  padding-top: 1.4px;
+  padding-top: calc(0.5089058524vw + 10.0916030534px) / 10;
 }
 
 .error {
   font-family: Lato;
-  font-size: 14px;
+  font-size: calc(0.5089058524vw + 10.0916030534px);
   font-variant-caps: all-small-caps;
   color: #b00020;
+}
+
+.small-text {
+  font-size: calc(0.5089058524vw + 6.0916030534px);
 }
 
 .text-body-2 {
   font-family: Lato;
   font-weight: 300;
   text-align: left;
-  font-size: calc(1.9192913386vw + 5.0551181102px);
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   letter-spacing: 0.25px;
   color: #68686f;
 }
 
 .btn-primary {
   font-family: Lato;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
+  font-size: calc(2.0356234097vw + 8.3664122137px);
   font-variant-caps: all-small-caps;
   font-size: 20px;
   text-align: center;
@@ -201,7 +221,7 @@ a {
 
 .btn-secondary {
   font-family: Lato;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
+  font-size: calc(2.0356234097vw + 8.3664122137px);
   font-variant-caps: all-small-caps;
   font-size: 20px;
   text-align: center;
@@ -219,16 +239,15 @@ body {
   font-family: Lato;
   font-weight: 300;
   text-align: left;
-  font-size: calc(1.9192913386vw + 5.0551181102px);
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   letter-spacing: 0.5px;
-  font-size: 100%;
 }
 
 h1 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(11.4296259843vw + -19.6653543307px);
+  font-size: calc(2.7989821883vw + 39.5038167939px);
   letter-spacing: -1.5px;
 }
 
@@ -236,7 +255,7 @@ h2 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 61px;
+  font-size: calc(3.0534351145vw + 8.5496183206px);
   letter-spacing: -0.5px;
 }
 
@@ -244,14 +263,14 @@ h3 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(4.5767716535vw + 15.3622047244px);
+  font-size: calc(3.0534351145vw + 8.5496183206px);
 }
 
 h4 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 34px;
+  font-size: calc(3.0534351145vw + 8.5496183206px);
   letter-spacing: 0.25px;
 }
 
@@ -259,46 +278,57 @@ h5 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 24px;
+  font-size: calc(2.0356234097vw + 8.3664122137px);
 }
 
 h6 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
+  font-size: calc(2.0356234097vw + 8.3664122137px);
   letter-spacing: 0.15px;
 }
 
 a {
   font-family: Lato;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
   font-variant-caps: all-small-caps;
-  color: #6494ed;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
+  text-decoration: none;
+  color: #2667ba;
+}
+
+button {
+  font-family: Lato;
+  font-variant-caps: all-small-caps;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
 }
 
 .caption {
   font-family: Lato;
-  font-size: 12px;
+  font-size: calc(0.5089058524vw + 8.0916030534px);
   font-variant-caps: all-small-caps;
   color: #68686f;
   height: 1em;
   margin-top: 0px;
-  padding-top: 1.4px;
+  padding-top: calc(0.5089058524vw + 10.0916030534px) / 10;
 }
 
 .error {
   font-family: Lato;
-  font-size: 14px;
+  font-size: calc(0.5089058524vw + 10.0916030534px);
   font-variant-caps: all-small-caps;
   color: #b00020;
+}
+
+.small-text {
+  font-size: calc(0.5089058524vw + 6.0916030534px);
 }
 
 .text-body-2 {
   font-family: Lato;
   font-weight: 300;
   text-align: left;
-  font-size: calc(1.9192913386vw + 5.0551181102px);
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   letter-spacing: 0.25px;
   color: #68686f;
 }
@@ -322,16 +352,15 @@ body {
   font-family: Lato;
   font-weight: 300;
   text-align: left;
-  font-size: calc(1.9192913386vw + 5.0551181102px);
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   letter-spacing: 0.5px;
-  font-size: 100%;
 }
 
 h1 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(11.4296259843vw + -19.6653543307px);
+  font-size: calc(2.7989821883vw + 39.5038167939px);
   letter-spacing: -1.5px;
 }
 
@@ -339,7 +368,7 @@ h2 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 61px;
+  font-size: calc(3.0534351145vw + 8.5496183206px);
   letter-spacing: -0.5px;
 }
 
@@ -347,14 +376,14 @@ h3 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(4.5767716535vw + 15.3622047244px);
+  font-size: calc(3.0534351145vw + 8.5496183206px);
 }
 
 h4 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 34px;
+  font-size: calc(3.0534351145vw + 8.5496183206px);
   letter-spacing: 0.25px;
 }
 
@@ -362,72 +391,84 @@ h5 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 24px;
+  font-size: calc(2.0356234097vw + 8.3664122137px);
 }
 
 h6 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
+  font-size: calc(2.0356234097vw + 8.3664122137px);
   letter-spacing: 0.15px;
 }
 
 a {
   font-family: Lato;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
   font-variant-caps: all-small-caps;
-  color: #6494ed;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
+  text-decoration: none;
+  color: #2667ba;
+}
+
+button {
+  font-family: Lato;
+  font-variant-caps: all-small-caps;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
 }
 
 .caption {
   font-family: Lato;
-  font-size: 12px;
+  font-size: calc(0.5089058524vw + 8.0916030534px);
   font-variant-caps: all-small-caps;
   color: #68686f;
   height: 1em;
   margin-top: 0px;
-  padding-top: 1.4px;
+  padding-top: calc(0.5089058524vw + 10.0916030534px) / 10;
 }
 
 .error {
   font-family: Lato;
-  font-size: 14px;
+  font-size: calc(0.5089058524vw + 10.0916030534px);
   font-variant-caps: all-small-caps;
   color: #b00020;
+}
+
+.small-text {
+  font-size: calc(0.5089058524vw + 6.0916030534px);
 }
 
 .text-body-2 {
   font-family: Lato;
   font-weight: 300;
   text-align: left;
-  font-size: calc(1.9192913386vw + 5.0551181102px);
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   letter-spacing: 0.25px;
   color: #68686f;
 }
 
 div#contact-page div.contact-form {
-  margin-bottom: 5em;
-  margin-left: 5em;
+  margin-bottom: 10vw;
+  margin-left: 10vw;
 }
 div#contact-page div.contact-form p {
   font-family: Lato;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
+  font-size: calc(2.0356234097vw + 8.3664122137px);
   font-variant-caps: all-small-caps;
-  font-size: 20px;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
 }
 div#contact-page div.contact-form input {
   background-color: #f6f6ff;
   border: none;
   border-bottom: 1px solid black;
-  color: #2667ba;
-  font-size: 20px;
+  font-family: Lato;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   font-weight: 900;
-  width: 22em;
+  padding-left: 0.5em;
+  width: 44vw;
 }
 div#contact-page div.contact-form textarea {
-  width: 40em;
-  height: 24em;
+  width: 80vw;
+  height: 48vw;
   background-color: #ffffff;
   border: 1px solid black;
   overflow-y: scroll;
@@ -436,12 +477,12 @@ div#contact-page div.contact-form textarea {
   font-family: Lato;
   font-weight: 300;
   text-align: left;
-  font-size: calc(1.9192913386vw + 5.0551181102px);
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   letter-spacing: 0.25px;
   color: #68686f;
 }
 div#contact-page div.contact-form .submit-buttons {
-  width: 40em;
+  width: 80vw;
 }
 div#contact-page div.contact-form .submit-buttons button {
   float: none;
@@ -452,16 +493,15 @@ body {
   font-family: Lato;
   font-weight: 300;
   text-align: left;
-  font-size: calc(1.9192913386vw + 5.0551181102px);
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   letter-spacing: 0.5px;
-  font-size: 100%;
 }
 
 h1 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(11.4296259843vw + -19.6653543307px);
+  font-size: calc(2.7989821883vw + 39.5038167939px);
   letter-spacing: -1.5px;
 }
 
@@ -469,7 +509,7 @@ h2 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 61px;
+  font-size: calc(3.0534351145vw + 8.5496183206px);
   letter-spacing: -0.5px;
 }
 
@@ -477,14 +517,14 @@ h3 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(4.5767716535vw + 15.3622047244px);
+  font-size: calc(3.0534351145vw + 8.5496183206px);
 }
 
 h4 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 34px;
+  font-size: calc(3.0534351145vw + 8.5496183206px);
   letter-spacing: 0.25px;
 }
 
@@ -492,46 +532,57 @@ h5 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 24px;
+  font-size: calc(2.0356234097vw + 8.3664122137px);
 }
 
 h6 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
+  font-size: calc(2.0356234097vw + 8.3664122137px);
   letter-spacing: 0.15px;
 }
 
 a {
   font-family: Lato;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
   font-variant-caps: all-small-caps;
-  color: #6494ed;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
+  text-decoration: none;
+  color: #2667ba;
+}
+
+button {
+  font-family: Lato;
+  font-variant-caps: all-small-caps;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
 }
 
 .caption {
   font-family: Lato;
-  font-size: 12px;
+  font-size: calc(0.5089058524vw + 8.0916030534px);
   font-variant-caps: all-small-caps;
   color: #68686f;
   height: 1em;
   margin-top: 0px;
-  padding-top: 1.4px;
+  padding-top: calc(0.5089058524vw + 10.0916030534px) / 10;
 }
 
 .error {
   font-family: Lato;
-  font-size: 14px;
+  font-size: calc(0.5089058524vw + 10.0916030534px);
   font-variant-caps: all-small-caps;
   color: #b00020;
+}
+
+.small-text {
+  font-size: calc(0.5089058524vw + 6.0916030534px);
 }
 
 .text-body-2 {
   font-family: Lato;
   font-weight: 300;
   text-align: left;
-  font-size: calc(1.9192913386vw + 5.0551181102px);
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   letter-spacing: 0.25px;
   color: #68686f;
 }
@@ -627,16 +678,15 @@ body {
   font-family: Lato;
   font-weight: 300;
   text-align: left;
-  font-size: calc(1.9192913386vw + 5.0551181102px);
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   letter-spacing: 0.5px;
-  font-size: 100%;
 }
 
 h1 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(11.4296259843vw + -19.6653543307px);
+  font-size: calc(2.7989821883vw + 39.5038167939px);
   letter-spacing: -1.5px;
 }
 
@@ -644,7 +694,7 @@ h2 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 61px;
+  font-size: calc(3.0534351145vw + 8.5496183206px);
   letter-spacing: -0.5px;
 }
 
@@ -652,14 +702,14 @@ h3 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(4.5767716535vw + 15.3622047244px);
+  font-size: calc(3.0534351145vw + 8.5496183206px);
 }
 
 h4 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 34px;
+  font-size: calc(3.0534351145vw + 8.5496183206px);
   letter-spacing: 0.25px;
 }
 
@@ -667,46 +717,57 @@ h5 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 24px;
+  font-size: calc(2.0356234097vw + 8.3664122137px);
 }
 
 h6 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
+  font-size: calc(2.0356234097vw + 8.3664122137px);
   letter-spacing: 0.15px;
 }
 
 a {
   font-family: Lato;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
   font-variant-caps: all-small-caps;
-  color: #6494ed;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
+  text-decoration: none;
+  color: #2667ba;
+}
+
+button {
+  font-family: Lato;
+  font-variant-caps: all-small-caps;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
 }
 
 .caption {
   font-family: Lato;
-  font-size: 12px;
+  font-size: calc(0.5089058524vw + 8.0916030534px);
   font-variant-caps: all-small-caps;
   color: #68686f;
   height: 1em;
   margin-top: 0px;
-  padding-top: 1.4px;
+  padding-top: calc(0.5089058524vw + 10.0916030534px) / 10;
 }
 
 .error {
   font-family: Lato;
-  font-size: 14px;
+  font-size: calc(0.5089058524vw + 10.0916030534px);
   font-variant-caps: all-small-caps;
   color: #b00020;
+}
+
+.small-text {
+  font-size: calc(0.5089058524vw + 6.0916030534px);
 }
 
 .text-body-2 {
   font-family: Lato;
   font-weight: 300;
   text-align: left;
-  font-size: calc(1.9192913386vw + 5.0551181102px);
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   letter-spacing: 0.25px;
   color: #68686f;
 }
@@ -731,16 +792,15 @@ body {
   font-family: Lato;
   font-weight: 300;
   text-align: left;
-  font-size: calc(1.9192913386vw + 5.0551181102px);
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   letter-spacing: 0.5px;
-  font-size: 100%;
 }
 
 h1 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(11.4296259843vw + -19.6653543307px);
+  font-size: calc(2.7989821883vw + 39.5038167939px);
   letter-spacing: -1.5px;
 }
 
@@ -748,7 +808,7 @@ h2 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 61px;
+  font-size: calc(3.0534351145vw + 8.5496183206px);
   letter-spacing: -0.5px;
 }
 
@@ -756,14 +816,14 @@ h3 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(4.5767716535vw + 15.3622047244px);
+  font-size: calc(3.0534351145vw + 8.5496183206px);
 }
 
 h4 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 34px;
+  font-size: calc(3.0534351145vw + 8.5496183206px);
   letter-spacing: 0.25px;
 }
 
@@ -771,46 +831,57 @@ h5 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 24px;
+  font-size: calc(2.0356234097vw + 8.3664122137px);
 }
 
 h6 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
+  font-size: calc(2.0356234097vw + 8.3664122137px);
   letter-spacing: 0.15px;
 }
 
 a {
   font-family: Lato;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
   font-variant-caps: all-small-caps;
-  color: #6494ed;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
+  text-decoration: none;
+  color: #2667ba;
+}
+
+button {
+  font-family: Lato;
+  font-variant-caps: all-small-caps;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
 }
 
 .caption {
   font-family: Lato;
-  font-size: 12px;
+  font-size: calc(0.5089058524vw + 8.0916030534px);
   font-variant-caps: all-small-caps;
   color: #68686f;
   height: 1em;
   margin-top: 0px;
-  padding-top: 1.4px;
+  padding-top: calc(0.5089058524vw + 10.0916030534px) / 10;
 }
 
 .error {
   font-family: Lato;
-  font-size: 14px;
+  font-size: calc(0.5089058524vw + 10.0916030534px);
   font-variant-caps: all-small-caps;
   color: #b00020;
+}
+
+.small-text {
+  font-size: calc(0.5089058524vw + 6.0916030534px);
 }
 
 .text-body-2 {
   font-family: Lato;
   font-weight: 300;
   text-align: left;
-  font-size: calc(1.9192913386vw + 5.0551181102px);
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   letter-spacing: 0.25px;
   color: #68686f;
 }
@@ -834,16 +905,15 @@ body {
   font-family: Lato;
   font-weight: 300;
   text-align: left;
-  font-size: calc(1.9192913386vw + 5.0551181102px);
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   letter-spacing: 0.5px;
-  font-size: 100%;
 }
 
 h1 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(11.4296259843vw + -19.6653543307px);
+  font-size: calc(2.7989821883vw + 39.5038167939px);
   letter-spacing: -1.5px;
 }
 
@@ -851,7 +921,7 @@ h2 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 61px;
+  font-size: calc(3.0534351145vw + 8.5496183206px);
   letter-spacing: -0.5px;
 }
 
@@ -859,14 +929,14 @@ h3 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(4.5767716535vw + 15.3622047244px);
+  font-size: calc(3.0534351145vw + 8.5496183206px);
 }
 
 h4 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 34px;
+  font-size: calc(3.0534351145vw + 8.5496183206px);
   letter-spacing: 0.25px;
 }
 
@@ -874,46 +944,57 @@ h5 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: 24px;
+  font-size: calc(2.0356234097vw + 8.3664122137px);
 }
 
 h6 {
   font-family: Montserrat;
   font-weight: 300;
   text-align: center;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
+  font-size: calc(2.0356234097vw + 8.3664122137px);
   letter-spacing: 0.15px;
 }
 
 a {
   font-family: Lato;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
   font-variant-caps: all-small-caps;
-  color: #6494ed;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
+  text-decoration: none;
+  color: #2667ba;
+}
+
+button {
+  font-family: Lato;
+  font-variant-caps: all-small-caps;
+  font-size: calc(0.5089058524vw + 12.0916030534px);
 }
 
 .caption {
   font-family: Lato;
-  font-size: 12px;
+  font-size: calc(0.5089058524vw + 8.0916030534px);
   font-variant-caps: all-small-caps;
   color: #68686f;
   height: 1em;
   margin-top: 0px;
-  padding-top: 1.4px;
+  padding-top: calc(0.5089058524vw + 10.0916030534px) / 10;
 }
 
 .error {
   font-family: Lato;
-  font-size: 14px;
+  font-size: calc(0.5089058524vw + 10.0916030534px);
   font-variant-caps: all-small-caps;
   color: #b00020;
+}
+
+.small-text {
+  font-size: calc(0.5089058524vw + 6.0916030534px);
 }
 
 .text-body-2 {
   font-family: Lato;
   font-weight: 300;
   text-align: left;
-  font-size: calc(1.9192913386vw + 5.0551181102px);
+  font-size: calc(0.5089058524vw + 12.0916030534px);
   letter-spacing: 0.25px;
   color: #68686f;
 }
@@ -938,7 +1019,7 @@ a {
   padding-bottom: 4px;
   margin: 6px;
   font-family: Lato;
-  font-size: calc(3.8385826772vw + 12.1102362205px);
+  font-size: calc(2.0356234097vw + 8.3664122137px);
   font-variant-caps: all-small-caps;
   text-decoration: none;
   font-size: 20px;

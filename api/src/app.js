@@ -7,7 +7,6 @@ const logger = require("morgan");
 const passport = require("passport");
 const path = require("path");
 
-require("./models/Entry");
 require("./models/User");
 
 const authRouter = require("./routes/auth");

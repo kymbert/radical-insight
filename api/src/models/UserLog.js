@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const MedicationSchema = require("./MedicationSchema");
-const MoodSchema = require("./MoodSchema");
+const MedicationSchema = require("./Medication");
+const MoodSchema = require("./Mood");
 
 const UserLogSchema = new Schema({
   createdOn: {

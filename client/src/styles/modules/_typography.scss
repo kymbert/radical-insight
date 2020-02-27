@@ -1,168 +1,60 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,700|Montserrat:300,700&display=swap");
+@import "leastSquaresFit";
 
-$mdc-typography-styles-headline1: (
-  font-family: unquote("Montserrat"),
-  font-size: 97
-);
-$mdc-typography-styles-headline2: (
-  font-family: unquote("Montserrat"),
-  font-size: 61
-);
-$mdc-typography-styles-headline3: (
-  font-family: unquote("Montserrat"),
-  font-size: 48
-);
-$mdc-typography-styles-headline4: (
-  font-family: unquote("Montserrat"),
-  font-size: 34
-);
-$mdc-typography-styles-headline5: (
-  font-family: unquote("Montserrat"),
-  font-size: 24
-);
-$mdc-typography-styles-headline6: (
-  font-family: unquote("Montserrat"),
-  font-size: 20
-);
-$mdc-typography-styles-body1: (
-  font-family: unquote("Lato"),
-  font-size: 17
-);
-$mdc-typography-styles-body2: (
-  font-family: unquote("Lato"),
-  font-size: 15
-);
-$mdc-typography-styles-subtitle1: (
-  font-family: unquote("Montserrat"),
-  font-size: 16
-);
-$mdc-typography-styles-subtitle2: (
-  font-family: unquote("Montserrat"),
-  font-size: 14
-);
-$mdc-typography-styles-button: (
-  font-family: unquote("Lato"),
-  font-size: 15
-);
-$mdc-typography-styles-overline: (
-  font-family: unquote("Lato"),
-  font-size: 10
-);
-$mdc-typography-styles-caption: (
-  font-family: unquote("Lato"),
-  font-size: 13
-);
-
-$headline-family: unquote("Montserrat");
-$body-family: unquote("Lato");
-
-/// least-squares-fit
-/// Calculate the least square fit linear regression of provided values
-/// @param {map} $map - A SASS map of viewport width and size value combinations
-/// @return Linear equation as a calc() function
-/// @example
-///   font-size: least-squares-fit((576: 24, 768: 24, 992: 34));
-@function least-squares-fit($map) {
-  // Get the number of provided breakpoints
-  $length: length(map-keys($map));
-
-  // Error if the number of breakpoints is < 2
-  @if ($length < 2) {
-    @error "leastSquaresFit() $map must be at least 2 values";
-  }
-
-  // Calculate the Means
-  $resTotal: 0;
-  $valueTotal: 0;
-  @each $res, $value in $map {
-    $resTotal: $resTotal + $res;
-    $valueTotal: $valueTotal + $value;
-  }
-  $resMean: $resTotal/$length;
-  $valueMean: $valueTotal/$length;
-
-  // Calculate some other stuff
-  $multipliedDiff: 0;
-  $squaredDiff: 0;
-  @each $res, $value in $map {
-    // Differences from means
-    $resDiff: $res - $resMean;
-    $valueDiff: $value - $valueMean;
-
-    // Sum of multiplied differences
-    $multipliedDiff: $multipliedDiff + ($resDiff * $valueDiff);
-
-    // Sum of squared resolution differences
-    $squaredDiff: $squaredDiff + ($resDiff * $resDiff);
-  }
-
-  // Calculate the Slope
-  $m: $multipliedDiff / $squaredDiff;
-
-  // Calculate the Y-Intercept
-  $b: $valueMean - ($m * $resMean);
-
-  // Return the CSS calc equation
-  @return calc(#{$m * 100}vw + #{$b}px);
-}
+$font-family-headline: unquote("Montserrat");
+$font-family-body: unquote("Lato");
 
 $font-size-title: least-squares-fit(
   (
-    576: 50,
-    768: 61,
-    992: 97
+    375: 50,
+    768: 61
   )
 );
 $font-size-x-large: least-squares-fit(
   (
-    576: 42,
-    768: 50,
-    992: 61
+    375: 20,
+    768: 32
   )
 );
 $font-size-large: least-squares-fit(
   (
-    576: 34,
-    768: 42,
-    992: 50
+    375: 16,
+    768: 24
   )
 );
 $font-size-normal: least-squares-fit(
   (
-    576: 16,
-    768: 20,
-    992: 24
+    375: 14,
+    768: 16
   )
 );
 $font-size-small: least-squares-fit(
   (
-    576: 14,
-    768: 16,
-    992: 20
+    375: 12,
+    768: 14
   )
 );
 $font-size-x-small: least-squares-fit(
   (
-    576: 12,
-    768: 14,
-    992: 16
+    375: 10,
+    768: 12
+  )
+);
+$font-size-xx-small: least-squares-fit(
+  (
+    375: 8,
+    768: 10
   )
 );
 
-// $font-size-x-large: 34px;
-// $font-size-large: 20px;
-// $font-size-normal: 16px;
-// $font-size-small: 14px;
-// $font-size-x-small: 12px;
-
 @mixin headline {
-  font-family: $headline-family;
+  font-family: $font-family-headline;
   font-weight: 300;
   text-align: center;
 }
 
 @mixin body {
-  font-family: $body-family;
+  font-family: $font-family-body;
   font-weight: 300;
   text-align: left;
 }
@@ -214,21 +106,26 @@ $font-size-x-small: least-squares-fit(
   color: $text-secondary-color;
 }
 
+@mixin all-caps {
+  font-family: $font-family-body;
+  font-variant-caps: all-small-caps;
+}
+
 @mixin button-text {
-  font-family: $body-family;
+  font-family: $font-family-body;
   font-size: $font-size-large;
   font-variant-caps: all-small-caps;
 }
 
 @mixin caption-text {
-  font-family: $body-family;
+  font-family: $font-family-body;
   font-size: $font-size-x-small;
   font-variant-caps: all-small-caps;
   color: $text-secondary-color;
 }
 
 @mixin error-text {
-  font-family: $body-family;
+  font-family: $font-family-body;
   font-size: $font-size-small;
   font-variant-caps: all-small-caps;
   color: $error-color;
@@ -237,7 +134,6 @@ $font-size-x-small: least-squares-fit(
 html,
 body {
   @include body1;
-  font-size: 100%;
 }
 
 h1 {
@@ -260,10 +156,15 @@ h6 {
 }
 
 a {
-  @include button-text;
+  @include all-caps;
   font-size: $font-size-normal;
   text-decoration: none;
-  color: $primary-color;
+  color: $primary-color-dark;
+}
+
+button {
+  @include all-caps;
+  font-size: $font-size-normal;
 }
 
 .caption {
@@ -274,6 +175,9 @@ a {
 }
 .error {
   @include error-text;
+}
+.small-text {
+  font-size: $font-size-xx-small;
 }
 .text-body-2 {
   @include body2;

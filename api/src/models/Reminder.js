@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const EntrySchema = require("./Entry");
 const UserLogSchema = require("./UserLog");
 const { Schema } = mongoose;
 
@@ -24,5 +23,4 @@ const ReminderSchema = new Schema({
   }
 });
 
-mongoose.models("reminders", ReminderSchema);
 module.exports = ReminderSchema;
