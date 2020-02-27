@@ -1,0 +1,17 @@
+@import "variables";
+
+#sign-up-form {
+  width: 80%;
+  margin-left: 10%;
+
+  .error-field {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+  }
+
+  .btn-submit {
+    display: inline-block;
+    float: right;
+  }
+}

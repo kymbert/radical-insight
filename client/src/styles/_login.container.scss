@@ -1,0 +1,20 @@
+@import "variables";
+
+#log-in-page {
+  #log-in-form {
+    width: 50%;
+    margin-left: 25%;
+
+    .submit-buttons {
+      float: right;
+      margin-top: 1em;
+      margin-right: 0px !important;
+    }
+  }
+
+  .need-account {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+}

@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,700|Montserrat:300,700&display=swap");
+@import "leastSquaresFit";
+
+$font-family-headline: unquote("Montserrat");
+$font-family-body: unquote("Lato");
+
+$font-size-title: least-squares-fit(
+  (
+    375: 50,
+    768: 61
+  )
+);
+$font-size-x-large: least-squares-fit(
+  (
+    375: 20,
+    768: 32
+  )
+);
+$font-size-large: least-squares-fit(
+  (
+    375: 16,
+    768: 24
+  )
+);
+$font-size-normal: least-squares-fit(
+  (
+    375: 14,
+    768: 16
+  )
+);
+$font-size-small: least-squares-fit(
+  (
+    375: 12,
+    768: 14
+  )
+);
+$font-size-x-small: least-squares-fit(
+  (
+    375: 10,
+    768: 12
+  )
+);
+$font-size-xx-small: least-squares-fit(
+  (
+    375: 8,
+    768: 10
+  )
+);
+
+@mixin headline {
+  font-family: $font-family-headline;
+  font-weight: 300;
+  text-align: center;
+}
+
+@mixin body {
+  font-family: $font-family-body;
+  font-weight: 300;
+  text-align: left;
+}
+
+@mixin headline1 {
+  @include headline;
+  font-size: $font-size-title;
+  letter-spacing: -1.5px;
+}
+
+@mixin headline2 {
+  @include headline;
+  font-size: $font-size-x-large;
+  letter-spacing: -0.5px;
+}
+
+@mixin headline3 {
+  @include headline;
+  font-size: $font-size-x-large;
+}
+
+@mixin headline4 {
+  @include headline;
+  font-size: $font-size-x-large;
+  letter-spacing: 0.25px;
+}
+
+@mixin headline5 {
+  @include headline;
+  font-size: $font-size-large;
+}
+
+@mixin headline6 {
+  @include headline;
+  font-size: $font-size-large;
+  letter-spacing: 0.15px;
+}
+
+@mixin body1 {
+  @include body;
+  font-size: $font-size-normal;
+  letter-spacing: 0.5px;
+}
+
+@mixin body2 {
+  @include body;
+  font-size: $font-size-normal;
+  letter-spacing: 0.25px;
+  color: $text-secondary-color;
+}
+
+@mixin all-caps {
+  font-family: $font-family-body;
+  font-variant-caps: all-small-caps;
+}
+
+@mixin button-text {
+  font-family: $font-family-body;
+  font-size: $font-size-large;
+  font-variant-caps: all-small-caps;
+}
+
+@mixin caption-text {
+  font-family: $font-family-body;
+  font-size: $font-size-x-small;
+  font-variant-caps: all-small-caps;
+  color: $text-secondary-color;
+}
+
+@mixin error-text {
+  font-family: $font-family-body;
+  font-size: $font-size-small;
+  font-variant-caps: all-small-caps;
+  color: $error-color;
+}
+
+html,
+body {
+  @include body1;
+}
+
+h1 {
+  @include headline1;
+}
+h2 {
+  @include headline2;
+}
+h3 {
+  @include headline3;
+}
+h4 {
+  @include headline4;
+}
+h5 {
+  @include headline5;
+}
+h6 {
+  @include headline6;
+}
+
+a {
+  @include all-caps;
+  font-size: $font-size-normal;
+  text-decoration: none;
+  color: $primary-color-dark;
+}
+
+button {
+  @include all-caps;
+  font-size: $font-size-normal;
+}
+
+.caption {
+  @include caption-text;
+  height: 1em;
+  margin-top: 0px;
+  padding-top: ($font-size-small / 10);
+}
+.error {
+  @include error-text;
+}
+.small-text {
+  font-size: $font-size-xx-small;
+}
+.text-body-2 {
+  @include body2;
+}
