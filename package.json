@@ -1,0 +1,9 @@
+{
+  "name": "radical-insight",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "heroku-postbuild": "cd client && npm i && npm run build",
+    "start": "cd api && npm i && npm start"
+  }
+}

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "eslint": "eslint src/**/*.js",
+    "eslint": "eslint . --ext .js",
     "prettify": "pretty-quick",
     "test": "./bin/runMocha.sh",
     "start": "nodemon -e js ./bin/www"
