@@ -9,7 +9,7 @@
     "start": "nodemon -e js ./bin/www"
   },
   "dependencies": {
-    "acorn": "^6.3.0",
+    "acorn": "^6.4.1",
     "babel-cli": "^6.26.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
