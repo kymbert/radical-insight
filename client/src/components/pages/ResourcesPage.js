@@ -94,6 +94,26 @@ class ResourcesPage extends React.Component {
               when you visit.
             </p>
           </div>
+          <div className="resource">
+            <h2>Addiction Resource</h2>
+            <p>
+              <a
+                href="https://addictionresource.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Addiction Resource
+              </a>{" "}
+              was founded in 2014 to provide a community for those recovering
+              from addiction and to help patients find the highest quality care
+              for a successful recovery. Our goal is to provide resources to
+              help patients and their loved ones so that they may stay on the
+              road to recovery, and can successfully overcome addiction for
+              life. We believe in our ability to help improve the lives of
+              others, and belief is what motivates us to educate and support our
+              readers every day.
+            </p>
+          </div>
         </div>
       </div>
     );
