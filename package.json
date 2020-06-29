@@ -1,0 +1,58 @@
+{
+  "name": "radical-insight",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_ENVIRONMENT=dev npx nodemon -e js ./bin/www",
+    "eslint": "npx eslint . --ext .js",
+    "prettify": "pretty-quick",
+    "test": "./bin/runMocha.sh",
+    "start": "./bin/www",
+    "prod": "NODE_ENVIRONMENT=production npm run start",
+    "qa": "NODE_ENVIRONMENT=qa npm run start"
+  },
+  "dependencies": {
+    "acorn": "^6.4.1",
+    "babel-cli": "^6.26.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.1.0",
+    "express": "~4.16.0",
+    "fibers": "^4.0.1",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.5",
+    "morgan": "~1.9.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^12.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "husky": "^2.7.0",
+    "jsdoc": "^3.6.3",
+    "nodemon": "^1.19.2",
+    "prettier": "1.18.2",
+    "pretty-quick": "^1.11.1"
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+      "eqeqeq": "error",
+      "quotes": [
+        "error",
+        "double"
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && eslint src/**/*.js"
+    }
+  }
+}
