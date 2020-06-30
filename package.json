@@ -5,11 +5,10 @@
   "scripts": {
     "dev": "NODE_ENVIRONMENT=dev npx nodemon -e js ./bin/www",
     "eslint": "npx eslint . --ext .js",
+    "heroku-postbuild": "cd client && npm i && npm run build",
     "prettify": "pretty-quick",
     "test": "./bin/runMocha.sh",
-    "start": "./bin/www",
-    "prod": "NODE_ENVIRONMENT=production npm run start",
-    "qa": "NODE_ENVIRONMENT=qa npm run start"
+    "start": "./bin/www"
   },
   "dependencies": {
     "acorn": "^6.4.1",

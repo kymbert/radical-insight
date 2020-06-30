@@ -1,0 +1,31 @@
+@import "variables";
+@import "buttons";
+@import "about.container";
+@import "contact.container";
+@import "home.container";
+@import "landing.container";
+@import "login.container";
+@import "signup.container";
+@import "topNav.module";
+
+@for $i from 1 to 6 {
+  .item-#{$i} {
+    grid-column: $i;
+    cursor: default;
+  }
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: $background-color;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#footer {
+  bottom: 0px;
+}

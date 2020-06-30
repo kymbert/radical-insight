@@ -1,4 +1,19 @@
-.DS_Store
-.git
+# dependencies
 node_modules
-src/config/qa.js
+.pnp
+.env
+
+# testing
+coverage
+reports
+
+# production
+build
+logs
+
+# misc
+.DS_Store
+.sass-cache
+**/config/qa.js
+
+npm-debug.log*
