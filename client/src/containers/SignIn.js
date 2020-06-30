@@ -33,7 +33,7 @@ class SignIn extends React.Component {
       email: this.state.email,
       password: this.state.password
     };
-    fetch(process.env.REACT_APP_BASE_API_PATH + "/auth/login", {
+    fetch("/api/auth/login", {
       method: "post",
       headers: {
         "Content-type": "application/json",

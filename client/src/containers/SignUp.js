@@ -75,7 +75,7 @@ class SignUp extends React.Component {
       password: this.state.password,
       password2: this.state.password2
     };
-    fetch(process.env.REACT_APP_BASE_API_PATH + "/auth/register", {
+    fetch("/api/auth/register", {
       method: "post",
       headers: {
         "Content-type": "application/json",
@@ -85,7 +85,7 @@ class SignUp extends React.Component {
     }).then(response => {
       if (response.ok) {
         response.json().then(json => {
-          fetch(process.env.REACT_APP_BASE_API_PATH + "/auth/login", {
+          fetch("/api/auth/login", {
             method: "post",
             headers: {
               "Content-type": "application/json",
