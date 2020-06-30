@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import React from "react";
 import ReactDOM from "react-dom";
 
-require('dotenv').config()
+require("dotenv").config()
 
 ReactDOM.render(
   <Provider store={store}>
