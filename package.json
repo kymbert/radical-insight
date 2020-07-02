@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_ENV=dev npx nodemon -e js ./bin/www",
-    "eslint": "npx eslint . --ext .js",
+    "eslint": "./bin/lint-all-report.sh",
     "heroku-postbuild": "cd client && npm i && npm run build",
     "prettify": "pretty-quick",
-    "test": "./bin/runMocha.sh",
-    "start": "./bin/www"
+    "test": "mocha ./test/**/*.spec.js",
+    "start": "./bin/www",
+    "start:dev": "cp .env.development .env && NODE_ENV=development npx nodemon -e js ./bin/www"
   },
   "dependencies": {
     "acorn": "^6.4.1",
@@ -30,29 +30,18 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
+    "eslint-plugin-mocha": "^7.0.1",
     "husky": "^2.7.0",
     "jsdoc": "^3.6.3",
+    "mocha": "^8.0.1",
+    "mongodb-memory-server": "^6.6.1",
     "nodemon": "^1.19.2",
     "prettier": "1.18.2",
     "pretty-quick": "^1.11.1"
   },
-  "eslintConfig": {
-    "env": {
-      "es6": true,
-      "node": true
-    },
-    "extends": "eslint:recommended",
-    "rules": {
-      "eqeqeq": "error",
-      "quotes": [
-        "error",
-        "double"
-      ]
-    }
-  },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && eslint src/**/*.js"
+      "pre-commit": "pretty-quick --staged && ./bin/lint-all.sh"
     }
   }
 }

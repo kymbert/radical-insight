@@ -1,7 +1,5 @@
-const keys = require("./config/keys");
 const bodyParser = require("body-parser");
 const express = require("express");
-const createError = require("http-errors");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 const passport = require("passport");
@@ -13,7 +11,7 @@ const authRouter = require("./routes/auth");
 const usersRouter = require("./routes/users");
 
 mongoose
-  .connect(keys.mongoURI, {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
@@ -32,7 +30,6 @@ require("./config/passport")(passport);
 
 app.use("/api/auth", authRouter);
 app.use("/api/users", usersRouter);
-
 
 if (process.env.NODE_ENV === "production" || process.env.NODE_ENV === "dev") {
   app.use(express.static(path.join(__dirname, "..", "client", "build")));

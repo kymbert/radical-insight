@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const UserLogSchema = require("./UserLog");
 const { Schema } = mongoose;
 
 const ReminderSchema = new Schema({

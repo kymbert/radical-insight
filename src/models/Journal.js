@@ -8,3 +8,5 @@ const JournalSchema = new Schema({
   tags: [String],
   title: String
 });
+
+module.exports = JournalSchema;

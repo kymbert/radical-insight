@@ -1,7 +1,6 @@
 const bcrypt = require("bcryptjs");
 const express = require("express");
 const jwt = require("jsonwebtoken");
-const keys = require("../config/keys");
 const passport = require("passport");
 const mongoose = require("mongoose");
 
@@ -48,7 +47,7 @@ router.post("/api/users/login", (req, res) => {
             };
             jwt.sign(
               payload,
-              keys.secretOrKey,
+              process.env.JWT_SECRET,
               {
                 expiresIn: 31556926
               },

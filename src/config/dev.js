@@ -1,4 +1,4 @@
 module.exports = {
-  mongoURI: "mongodb://localhost:27017",
-  jwtSecret: "secret"
+  mongoURI: process.env.MONGO_URI,
+  jwtSecret: process.env.REACT_APP_JWT_SECRET
 };

@@ -84,7 +84,7 @@ class SignUp extends React.Component {
       body: JSON.stringify(body)
     }).then(response => {
       if (response.ok) {
-        response.json().then(json => {
+        response.json().then(() => {
           fetch("/api/auth/login", {
             method: "post",
             headers: {
@@ -157,4 +157,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ reset, updateUser, updateToken }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(SignUp);
+export default connect(
+  null,
+  mapDispatchToProps
+)(SignUp);

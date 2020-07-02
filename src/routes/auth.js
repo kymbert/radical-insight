@@ -4,7 +4,6 @@ const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const passport = require("passport");
 
-const keys = require("../config/keys");
 const router = express.Router();
 const User = mongoose.model("users");
 
@@ -59,7 +58,7 @@ router.post("/login", (req, res) => {
             };
             jwt.sign(
               payload,
-              keys.secretOrKey,
+              process.env.JWT_SECRET,
               {
                 expiresIn: 31556926
               },

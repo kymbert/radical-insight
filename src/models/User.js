@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
-const { Schema } = mongoose;
 const JournalSchema = require("./Journal");
 const ReminderSchema = require("./Reminder");
 const UserLogSchema = require("./UserLog");
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 const UserSchema = new Schema({
   agreedToTerms: Date,
@@ -37,7 +37,7 @@ const UserSchema = new Schema({
  * toJSON transform
  */
 UserSchema.options.toJSON = {
-  transform: function(doc, ret, options) {
+  transform: function(doc, ret) {
     ret.id = ret._id;
     delete ret._id;
     delete ret.password;
