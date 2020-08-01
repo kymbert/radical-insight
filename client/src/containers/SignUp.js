@@ -1,12 +1,14 @@
 import { reset, updateToken, updateUser } from "../actions";
 
+import EmailInput from "../components/EmailInput";
+import PasswordInput from "../components/PasswordInput";
 import React from "react";
+import Submit from "../components/Submit";
+import TextCard from "../components/TextCard";
 import TextInput from "../components/TextInput";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-
-const mailformat = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/;
-const nameformat = /^[\w\s-']+$/;
+import theme from "../theme";
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -19,52 +21,26 @@ class SignUp extends React.Component {
     };
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.handlePassword1Change = this.handlePassword1Change.bind(this);
     this.handlePassword2Change = this.handlePassword2Change.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.validatePassword2 = this.validatePassword2.bind(this);
   }
 
-  handleNameChange(event) {
-    event.preventDefault();
-    if (!event.target.value.match(nameformat)) {
-      document.getElementById("name-error").innerText =
-        "Name is required. Feel free to use a pseudonym, though.";
-    } else {
-      document.getElementById("name-error").innerText = "";
-      this.setState({ name: event.target.value });
-    }
+  handleNameChange(value) {
+    this.setState({ name: value });
   }
 
-  handleEmailChange(event) {
-    event.preventDefault();
-    if (!event.target.value.match(mailformat)) {
-      document.getElementById("email-error").innerText = "Email must be valid.";
-    } else {
-      document.getElementById("email-error").innerText = "";
-      this.setState({ email: event.target.value });
-    }
+  handleEmailChange(value) {
+    this.setState({ email: value });
   }
 
-  handlePasswordChange(event) {
-    event.preventDefault();
-    if (event.target.value.length < 12) {
-      document.getElementById("password-error").innerText =
-        "Password must be at least 12 characters.";
-    } else {
-      document.getElementById("password-error").innerText = "";
-      this.setState({ password: event.target.value });
-    }
+  handlePassword1Change(value) {
+    this.setState({ password: value });
   }
 
-  handlePassword2Change(event) {
-    event.preventDefault();
-    if (event.target.value !== this.state.password) {
-      document.getElementById("password2-error").innerText =
-        "Passwords must match.";
-    } else {
-      document.getElementById("password2-error").innerText = "";
-      this.setState({ password2: event.target.value });
-    }
+  handlePassword2Change(value) {
+    this.setState({ password2: value });
   }
 
   handleSubmit(event) {
@@ -118,36 +94,52 @@ class SignUp extends React.Component {
     });
   }
 
+  validateName(value) {
+    return value.match(/^[\w\s-']+$/);
+  }
+
+  validatePassword1(value) {
+    return value.length >= 12;
+  }
+
+  validatePassword2(value) {
+    return value === this.state.password;
+  }
+
   render() {
     return (
-      <div id="sign-up-page">
+      <div id="sign-up-page" className="content">
         <h3>Create an Account</h3>
-        <div id="sign-up-form">
-          <span id="name-error" className="error error-field" />
-          <TextInput type="text" onChange={this.handleNameChange}>
+        <TextCard style={{
+          backgroundColor: theme.palette.primary.transparent,
+        }}>
+          <TextInput
+            id="name-input"
+            errorText="Name is required. Feel free to use a pseudonym, though."
+            onChange={this.handleNameChange}
+            validate={this.validateName}>
             name
           </TextInput>
-          <span id="email-error" className="error error-field" />
-          <TextInput type="email" onChange={this.handleEmailChange}>
+          <EmailInput onChange={this.handleEmailChange}>
             email
-          </TextInput>
-          <span id="password-error" className="error error-field" />
-          <TextInput type="password" onChange={this.handlePasswordChange}>
+          </EmailInput>
+          <PasswordInput
+            id="password-1"
+            errorText="Password must be at least 12 characters."
+            validate={this.validatePassword1}
+            onChange={this.handlePassword1Change}>
             password
-          </TextInput>
-          <span id="password2-error" className="error error-field" />
-          <TextInput type="password" onChange={this.handlePassword2Change}>
+          </PasswordInput>
+          <PasswordInput
+            id="password-2"
+            errorText="Passwords must match."
+            validate={this.validatePassword2}
+            onChange={this.handlePassword2Change}>
             confirm password
-          </TextInput>
-          <div className="submit-buttons">
-            <button
-              className="btn-primary btn-submit"
-              onClick={this.handleSubmit}
-            >
-              Submit
-            </button>
-          </div>
-        </div>
+          </PasswordInput>
+          <Submit onClick={this.handleSubmit} style={{ float: "right" }} />
+          <div style={{ clear: "both" }}></div>
+        </TextCard>
       </div>
     );
   }

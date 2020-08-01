@@ -1,3 +1,5 @@
+import "../styles/_landing.container.scss";
+
 import React from "react";
 import TextCard from "../components/TextCard";
 
@@ -13,7 +15,7 @@ class LandingPage extends React.Component {
           </div>
         </div>
         <div className="section" id="what">
-          <TextCard className="landing-content">
+          <TextCard>
             <p>
               Radical Insight (will be) a service to make mood tracking easy.
               You can keep tabs on your mood in multiple ways including email
@@ -35,7 +37,7 @@ class LandingPage extends React.Component {
           </TextCard>
         </div>
         <div className="section" id="how">
-          <TextCard className="landing-content">
+          <TextCard>
             <p>
               Radical Insight is still in its infancy and I (Kyle) am the sole
               designer, developer, and tester, so there are many ways you can

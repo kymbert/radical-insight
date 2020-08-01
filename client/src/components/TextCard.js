@@ -1,14 +1,15 @@
+import "./TextCard.scss";
+
 import React from "react";
-import { textCard } from "./TextCard.module.scss";
 
 class TextCard extends React.Component {
   render() {
     return (
       <div
-        className={[textCard, "text-card"].join(" ")}
+        className={["text-card", this.props.additionalClassName].join(" ")}
         style={this.props.style}
       >
-        <h6>{this.props.header}</h6>
+        <h3 className="card-heading">{this.props.header}</h3>
         <div>{this.props.children}</div>
       </div>
     );

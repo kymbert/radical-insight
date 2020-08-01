@@ -3,6 +3,13 @@ const initialState = {
   user: {}
 };
 
+const reset = (state) => {
+  return {
+    token: "",
+    user: {}
+  }
+};
+
 const updateToken = (state, payload) => {
   return {
     ...state,
@@ -17,7 +24,7 @@ const updateUser = (state, payload) => {
   };
 };
 
-const reducers = (state = initialState, action) => {
+const appReducer = (state = initialState, action) => {
   switch (action.type) {
     case "persist/REHYDRATE":
       return { ...state, persistedState: action.payload };
@@ -26,10 +33,17 @@ const reducers = (state = initialState, action) => {
     case "UPDATE_USER":
       return updateUser(state, action.payload);
     case "RESET":
-      return initialState;
+      return reset(state);
     default:
       return state;
   }
 };
 
-export default reducers;
+const rootReducer = (state, action) => {
+  if (action.type === "RESET") {
+    state = undefined;
+  }
+  return appReducer(state, action);
+}
+
+export default rootReducer;

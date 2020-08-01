@@ -1,11 +1,15 @@
+import "../styles/_logIn.container.scss";
+
 import { reset, updateToken, updateUser } from "../actions";
 
+import EmailInput from "../components/EmailInput";
+import PasswordInput from "../components/PasswordInput";
 import React from "react";
-import TextInput from "../components/TextInput";
+import Submit from "../components/Submit";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-class SignIn extends React.Component {
+class LogIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,14 +21,12 @@ class SignIn extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleEmailChange(event) {
-    event.preventDefault();
-    this.setState({ email: event.target.value });
+  handleEmailChange(value) {
+    this.setState({ email: value });
   }
 
-  handlePasswordChange(event) {
-    event.preventDefault();
-    this.setState({ password: event.target.value });
+  handlePasswordChange(value) {
+    this.setState({ password: value });
   }
 
   handleSubmit(event) {
@@ -37,12 +39,13 @@ class SignIn extends React.Component {
       method: "post",
       headers: {
         "Content-type": "application/json",
-        Accept: "application/json"
+        "Accept": "application/json"
       },
       body: JSON.stringify(body)
     }).then(response => {
       if (response.ok) {
-        response.json().then(json => {
+        response.json()
+        .then(json => {
           this.props.updateToken({ token: json.data.token });
           this.props.updateUser(json.data.user);
           window.location = "/";
@@ -61,21 +64,17 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div id="log-in-page">
+      <div id="log-in-page" className="content">
         <h3>Sign In</h3>
         <div id="log-in-form">
           <div id="error-text" className="error" />
-          <TextInput type="email" onChange={this.handleEmailChange}>
+          <EmailInput onChange={this.handleEmailChange}>
             email
-          </TextInput>
-          <TextInput type="password" onChange={this.handlePasswordChange}>
+          </EmailInput>
+          <PasswordInput onChange={this.handlePasswordChange} validate={() => {return true}}>
             password
-          </TextInput>
-          <div className="submit-buttons">
-            <button className="btn-primary" onClick={this.handleSubmit}>
-              Submit
-            </button>
-          </div>
+          </PasswordInput>
+          <Submit onClick={this.handleSubmit} style={{ float: "right" }} />
           <div style={{ clear: "both" }} />
         </div>
         <div className="need-account">
@@ -90,4 +89,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ reset, updateToken, updateUser }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(SignIn);
+export default connect(null, mapDispatchToProps)(LogIn);

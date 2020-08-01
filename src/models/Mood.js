@@ -13,4 +13,5 @@ const MoodSchema = new Schema({
   }
 });
 
+mongoose.model("moods", MoodSchema);
 module.exports = MoodSchema;
