@@ -9,3 +9,5 @@ class DashboardPage extends React.Component {
     return <div className="dashboard"></div>;
   }
 }
+
+export default DashboardPage;

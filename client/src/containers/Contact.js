@@ -1,3 +1,5 @@
+import "../styles/_contact.container.scss";
+
 import React from "react";
 
 class Contact extends React.Component {
@@ -42,7 +44,7 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <div id="contact-page">
+      <div id="contact-page" className="content">
         <div className="contact-form">
           <h3>Contact</h3>
           <p>

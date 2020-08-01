@@ -1,38 +1,50 @@
-const keys = require("./config/keys");
 const bodyParser = require("body-parser");
 const express = require("express");
-const createError = require("http-errors");
+const fs = require("fs");
 const mongoose = require("mongoose");
-const logger = require("morgan");
+const morgan = require("morgan");
 const passport = require("passport");
 const path = require("path");
 require("dotenv").config();
 require("./models/User");
 
+const { logger } = require("./logger");
+
 const authRouter = require("./routes/auth");
 const usersRouter = require("./routes/users");
+const userLogsRouter = require("./routes/userLogs");
 
 mongoose
-  .connect(keys.mongoURI, {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
-  .then(() => console.log("MongoDB connection successful."))
+  .then(() => logger.info("MongoDB connection successful."))
   .catch(err => {
-    console.log(`Error connecting to MongoDB:\n${err.message}`);
+    logger.error(`Error connecting to MongoDB:\n${err.message}`);
   });
 
 const app = express();
 
-app.use(logger("dev"));
-app.use(express.json());
+const accessLogStream = fs.createWriteStream(path.join(__dirname, "logs/access.log"), { flags: "a" });
+app.use(morgan("combined", { stream: accessLogStream }));
+if (process.env.NODE_ENV !== "production") {
+  app.use(morgan("dev"));
+}
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(passport.initialize());
 require("./config/passport")(passport);
 
 app.use("/api/auth", authRouter);
 app.use("/api/users", usersRouter);
-
+app.use("/api/user_logs", userLogsRouter);
+app.get("/api/health", (req, res) => {
+  res.json({
+    status: "200",
+    message: "All good"
+  });
+})
 
 if (process.env.NODE_ENV === "production" || process.env.NODE_ENV === "dev") {
   app.use(express.static(path.join(__dirname, "..", "client", "build")));

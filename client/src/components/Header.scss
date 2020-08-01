@@ -1,0 +1,81 @@
+@import "../styles/base/module";
+
+#header {
+  background-color: transparentize(black, 0.75);
+  font-size: $font-size-normal;
+  height: auto;
+  left: 0px;
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  transition: font-size 1s;
+  width: 100%;
+  z-index: 1;
+
+  &.scrolled-50 {
+    font-size: $font-size-small;
+  }
+
+  &.scrolled-100 {
+    font-size: $font-size-x-small;
+  }
+
+  a {
+    @include button-text;
+    background-color: transparent;
+    color: $text-primary;
+    display: block;
+    float: left;
+    font-size: inherit;
+    padding: $font-size-small;
+
+    &:hover {
+      color: $text-secondary;
+    }
+
+    &.active {
+      color: $text-secondary;
+    }
+  }
+
+  span {
+    display: none;
+  }
+
+  @media (max-width: $break-smartphone) {
+    background: transparent;
+    span {
+      display: block;
+      font-size: $font-size-x-large;
+      margin-left: 0.5em;
+      margin-top: 0.5em;
+    }
+
+    a {
+      display: none;
+    }
+
+    &.responsive {
+      @include border-mixin;
+      background-color: transparentize($primary-color, 0.1);
+      max-width: 50vw;
+
+      a {
+        @include border-mixin;
+        background-color: transparent;
+        color: $text-primary;
+        display: block;
+        float: none;
+        text-align: left;
+        width: 100%;
+
+        &#auth-link {
+          border: none;
+          margin: none;
+          color: inherit !important;
+          float: none !important;
+        }
+      }
+    }
+  }
+}

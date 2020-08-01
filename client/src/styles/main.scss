@@ -1,19 +1,5 @@
-@import "variables";
-@import "buttons";
-@import "about.container";
-@import "contact.container";
-@import "home.container";
-@import "landing.container";
-@import "login.container";
-@import "signup.container";
-@import "topNav.module";
-
-@for $i from 1 to 6 {
-  .item-#{$i} {
-    grid-column: $i;
-    cursor: default;
-  }
-}
+@import "./base/module";
+@import "./components/module";
 
 html {
   height: 100%;
@@ -22,10 +8,27 @@ html {
 
 body {
   background-color: $background-color;
+  color: $text-primary;
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
-#footer {
-  bottom: 0px;
+div.app {
+  background-attachment: fixed;
+  background-blend-mode: soft-light;
+  background-image: url("/images/isaac-davis.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  grid-template-rows: max-content auto max-content;
+  margin: -2vw;
+  min-height: 100vh;
+  padding: 2vw;
+}
+
+div.content {
+  min-height: 85vh;
+  padding-top: $font-size-large;
+  position: relative;
 }

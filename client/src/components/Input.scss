@@ -1,0 +1,48 @@
+@import "../styles/main";
+
+.input-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.error-text {
+  color: $error-color;
+  font-size: $font-size-x-small;
+}
+
+.input-field {
+  background-color: transparent;
+}
+
+.input-field-label {
+  text-align: right;
+}
+
+input {
+  @include body2;
+  background-color: inherit;
+  border-bottom: 1px solid black !important;
+  border: none;
+  padding-left: $font-size-x-small;
+  width: 90%;
+
+  &:focus {
+    border: 2px solid $secondary-color;
+    outline: none;
+  }
+
+  &:invalid {
+    border: 2px solid $error-color;
+    outline: none;
+  }
+
+  &[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0;
+
+    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+}

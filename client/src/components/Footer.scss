@@ -1,0 +1,15 @@
+@import "../styles/main";
+
+.footer {
+  color: $secondary-color;
+  display: grid;
+  font-size: $font-size-xx-small;
+  grid-template-columns: auto auto;
+  margin-top: 1.5em;
+  text-align: right;
+
+  a {
+    color: $primary-color-light;
+    font-size: inherit;
+  }
+}

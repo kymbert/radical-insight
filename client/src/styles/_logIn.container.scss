@@ -1,13 +1,10 @@
-@import "variables";
+@import "./base/module";
+@import "./components/module";;
 
 #log-in-page {
   #log-in-form {
-    width: 50%;
-    margin-left: 25%;
-
-    input {
-      background-color: $background-color;
-    }
+    width: 90%;
+    margin-left: 5%;
 
     .submit-buttons {
       float: right;
