@@ -1,5 +1,5 @@
 # Contributing to radical-insight
-Everyone is welcome to contribute to the radical-insight project! Please do so using GitHub issues. There are two types of issues used in the radical-insight project: defects and features. If the software is not behaving as intended, please submit a defect by opening an issue and prepending `[defect]` to the title. If you have a suggestion for an enhancement or believe some functionality was overlooked, submit a feature by opening an issue and prepending `[feature]` to the title.
+Everyone is welcome to contribute to the radical-insight project! Please do so using GitHub issues. There are two types of issues used in the radical-insight project: defects and features. If the software is not behaving as intended, please submit a defect by opening an issue and prepending `[defect]` to the title. If you have a suggestion for an enhancement or believe some functionality was overlooked, submit a feature by opening an issue and prepending `[feature]` to the title. Miscellaneous behind-the-scenes updates (e.g. dependency update or logging clean-up) should be prepended with `[tech-debt]`.
 
 ## Submitting a defect
 When submitting a defect, please include the following information:
