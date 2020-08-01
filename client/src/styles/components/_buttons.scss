@@ -1,0 +1,32 @@
+@import "../base/module";
+
+@mixin all-buttons {
+  @include button-text;
+  border: none;
+  box-shadow: 1px 1px transparentize($primary-color-light, 0.7);
+  color: $text-primary;
+  font-size: $font-size-normal;
+  height: $font-size-large;
+  margin: $font-size-small;
+  text-align: center;
+  text-decoration: none;
+  &:hover, &:active {
+    cursor: pointer;
+  }
+}
+
+.btn-primary {
+  @include all-buttons;
+  background-color: $primary-color;
+  &:active {
+    background-color: $primary-color-light;
+  }
+}
+
+.btn-secondary {
+  @include all-buttons;
+  background-color: $secondary-color;
+  &:active {
+    background-color: $secondary-color-light;
+  }
+}

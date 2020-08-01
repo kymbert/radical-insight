@@ -16,6 +16,9 @@ module.exports = {
     if (Validator.isEmpty(data.email)) {
       errors.email = "Email field is required";
     }
+    if (!isEmpty(errors)) {
+      errors.message = errors.email + "\n" + errors.password;  
+    }
 
     return {
       errors,

@@ -1,6 +1,5 @@
 # dependencies
 node_modules
-.pnp
 .env
 
 # testing
@@ -15,5 +14,4 @@ logs
 .DS_Store
 .sass-cache
 **/config/qa.js
-
-npm-debug.log*
+local

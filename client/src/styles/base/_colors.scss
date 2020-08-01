@@ -1,0 +1,17 @@
+$background-color: #1b1d2b;
+
+$primary-color: lighten($background-color, 15%);
+$primary-color-light: lighten($primary-color, 25%);
+
+$secondary-color: #6c3e49;
+$secondary-color-light: lighten($secondary-color, 25%);
+
+$tertiary-color: #6b5d5c;
+$tertiary-color-light: lighten($tertiary-color, 25%);
+
+$surface-color: #d9dde6;
+
+$text-primary: $surface-color;
+$text-inverted-color: $background-color;
+$text-secondary: darken($text-primary, 20%);
+$error-color: saturate($secondary-color, 50%);

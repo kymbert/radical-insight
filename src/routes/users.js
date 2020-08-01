@@ -3,6 +3,7 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
 const mongoose = require("mongoose");
+const { logger } = require("../logger");
 
 const router = express.Router();
 const User = mongoose.model("users");
@@ -25,7 +26,6 @@ router.get(
 );
 
 router.post("/api/users/login", (req, res) => {
-  console.log(req.body);
   const { errors, isValid } = validateLoginInput(req.body);
   if (!isValid) {
     return res.status(400).json(errors);
@@ -61,7 +61,7 @@ router.post("/api/users/login", (req, res) => {
               }
             );
           })
-          .catch(err => console.log(err));
+          .catch(err => logger.error(err));
       } else {
         return res
           .status(400)
@@ -94,7 +94,7 @@ router.post("/api/users", (req, res) => {
         newUser
           .save()
           .then(user => res.json(user))
-          .catch(err => console.log(err));
+          .catch(err => logger.error(err));
       });
     });
   });

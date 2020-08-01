@@ -1,3 +1,5 @@
+import "../styles/_about.container.scss";
+
 import React from "react";
 import TextCard from "../components/TextCard";
 

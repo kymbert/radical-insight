@@ -1,0 +1,18 @@
+@import "./colors";
+
+@mixin border-mixin {
+  box-shadow: 1px 1px $primary-color-light;
+  box-sizing: border-box;
+}
+
+@mixin outline($color) {
+  text-shadow:
+    -1px -1px $color,
+    -1px 0px $color,
+    -1px 1px $color,
+    0px -1px $color,
+    0px 1px $color,
+    1px -1px $color,
+    1px 0px $color,
+    1px 1px $color
+}

@@ -7,6 +7,7 @@ const passport = require("passport");
 const router = express.Router();
 const User = mongoose.model("users");
 
+const { logger } = require("../logger");
 const {
   validateLoginInput,
   validateRegisterInput
@@ -28,7 +29,6 @@ router.get(
 );
 
 router.post("/login", (req, res) => {
-  console.log(req.body);
   const { errors, isValid } = validateLoginInput(req.body);
   if (!isValid) {
     return res.status(400).json({
@@ -41,9 +41,7 @@ router.post("/login", (req, res) => {
     if (!user) {
       return res.status(404).json({
         status: "fail",
-        data: {
-          email: "No account with that email exists."
-        }
+        data: errors
       });
     }
     bcrypt.compare(password, user.password).then(isMatch => {
@@ -80,7 +78,7 @@ router.post("/login", (req, res) => {
               }
             );
           })
-          .catch(err => console.log(err));
+          .catch(err => logger.error(err));
       } else {
         return res.status(400).json({
           status: "fail",

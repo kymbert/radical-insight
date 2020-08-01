@@ -3,10 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <script
-      src="https://kit.fontawesome.com/41a325843b.js"
-      crossorigin="anonymous"
-    ></script>
+    <script defer src="https://friconix.com/cdn/friconix.js"></script>
     <link
       rel="stylesheet"
       href="%PUBLIC_URL%/stylesheets/main.css"
@@ -25,5 +22,26 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <div id="top-of-site-pixel-anchor"></div>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function(){
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      let header = document.getElementById("header");
+
+      window.onscroll = function() {
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop >= 100) {
+          header.classList.remove("scrolled-50");
+          header.classList.add("scrolled-100");
+        } else if (scrollTop >= 50){
+          header.classList.remove("scrolled-100");
+          header.classList.add("scrolled-50");
+        } else {
+          header.classList.remove("scrolled-50");
+          header.classList.remove("scrolled-100");
+        }
+      }
+  	});
+    </script>
   </body>
 </html>

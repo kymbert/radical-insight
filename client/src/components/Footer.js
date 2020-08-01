@@ -1,22 +1,22 @@
+import "./Footer.scss";
+
 import React from "react";
 
 class Footer extends React.Component {
   render() {
     return (
-      <div id="footer">
-        <div id="footer-grid">
-          <div
-            className="item-1"
-            style={{ overflow: "visible", whiteSpace: "nowrap" }}
-          >
-            <p className="small-text">
-              &copy; {new Date().getFullYear()} Kyle Imbertson
-            </p>
+      <div className="footer">
+        <div></div>
+        <div>
+          <div className="img-credit">
+            Background image by <a href="https://unsplash.com/@isaacdavis" target="_blank" rel="noopener noreferrer">Isaac Davis</a>.
           </div>
-          <div className="item-2"></div>
-          <div className="item-3"></div>
-          <div className="item-4"></div>
-          <div style={{ clear: "both" }} />
+          <div className="icon-credit">
+            Icons by <a href="https://friconix.com" target="_blank" rel="noopener noreferrer">Friconix</a>.
+          </div>
+          <div className="copyright">
+            Radical Insight &copy; {new Date().getFullYear()} <a href="http://www.kylecancode.com" target="_blank" rel="noopener noreferrer">Kyle Imbertson</a>.
+          </div>
         </div>
       </div>
     );

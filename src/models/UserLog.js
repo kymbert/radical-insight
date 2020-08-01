@@ -29,4 +29,5 @@ const UserLogSchema = new Schema({
   }
 });
 
+mongoose.model("userLogs", UserLogSchema);
 module.exports = UserLogSchema;

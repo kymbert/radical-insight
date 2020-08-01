@@ -1,0 +1,17 @@
+@import "../styles/main";
+
+.text-card {
+  background-color: transparentize($background-color, 0.3);
+  margin-top: 1em;
+  margin: 0 auto;
+  max-width: $content-max-width;
+  padding: 1em;
+
+  h3.card-heading {
+    font-size: $font-size-small;
+    font-weight: 700;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: left;
+  }
+}

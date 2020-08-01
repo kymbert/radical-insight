@@ -1,59 +1,37 @@
-@import "variables";
+@import "./base/module";
+@import "./components/module";
+@import "./landing.container";
 
 div.home-page {
-  div.section {
-    padding: 2em;
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @media only screen and (max-width: $break-smartphone) {
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+    }
 
-    @media (max-width: $break-smartphone) {
-      padding: 1em;
+    .text-card {
+      width: 80%;
+      @media only screen and (max-width: $break-smartphone) {
+        width: 80%;
+      }
     }
   }
 
-  div#hero {
-    background-image: url("../images/nicholas-barbaros.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    padding: inherit;
-
-    height: 102vh;
-    width: 101vw;
-    margin-top: -2vh;
-    margin-left: -2vw;
-    margin-bottom: 3vh;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    padding: 2em 0;
-
-    @media (max-width: $break-smartphone) {
-      background-attachment: scroll;
-    }
-
-    position: relative;
-    text-align: center;
-
-    div.heading {
-      position: absolute;
-      width: 100%;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      cursor: default;
-
-      span.em {
-        color: white;
-        font-style: italic;
-      }
-    }
-
-    .grid {
+  #recent-logs {
+    div.the-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: max-content auto auto;
+      color: $text-secondary;
 
-      .text-card {
-        width: 65%;
+      span {
+        padding-left: $font-size-normal;
+        font-size: $font-size-small;
+        &.header {
+          color: $text-primary;
+          font-size: $font-size-normal;
+        }
       }
     }
   }

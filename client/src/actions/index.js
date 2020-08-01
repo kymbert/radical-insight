@@ -12,6 +12,7 @@ export function updateUser(content) {
   };
 }
 
+
 export function reset() {
   return {
     type: "RESET"

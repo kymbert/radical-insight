@@ -1,84 +1,56 @@
-@import "variables";
+@import "./base/module";
+@import "./components/module";;
 
 div.landing-page {
   div.section {
     padding: 2em;
-
     @media (max-width: $break-smartphone) {
       padding: 1em;
     }
   }
 
-  .text-card {
-    background-color: transparent;
-    border: none;
-  }
-
   div#hero {
-    background-image: url("../images/nicholas-barbaros.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    padding: inherit;
-
-    height: 102vh;
-    width: 101vw;
-    margin-top: -2vh;
-    margin-left: -2vw;
-    margin-bottom: 3vh;
-    position: absolute;
-    top: 0px;
-    left: 0px;
+    height: 101vh;
     padding: 2em 0;
+    position: relative;
+    text-align: center;
+    width: 100vw;
 
     @media (max-width: $break-smartphone) {
       background-attachment: scroll;
     }
-
-    position: relative;
-    text-align: center;
 
     div.heading {
       position: absolute;
       width: 100%;
-      top: 20%;
+      top: 35%;
       left: 50%;
       transform: translate(-50%, -50%);
       cursor: default;
-
-      span.em {
-        color: white;
-        font-style: italic;
-      }
     }
   }
 
   div#why {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
-      url("../images/smartphone.jpg");
-    background-size: cover;
-    background-position: center;
     background-attachment: fixed;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+                      url("/images/smartphone.jpg");
+    background-position: center;
+    background-size: cover;
     height: auto;
     padding-bottom: 3em;
 
-    .text-card {
-      color: $text-inverted-color;
-    }
-
     @media (max-width: $break-smartphone) {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
-        url("../images/smartphone-mobile.jpg");
       background-attachment: scroll;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+                        url("/images/smartphone-mobile.jpg");
     }
   }
 
   ul#get-involved {
     list-style: none;
-    width: 75%;
     margin-left: auto;
     margin-right: auto;
+    width: 75%;
     li {
       margin-bottom: 0.7em;
     }
