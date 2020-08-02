@@ -13,10 +13,12 @@ class PasswordInput extends React.Component {
         errorText={this.props.errorText}
         validate={this.props.validate}
         id={this.id}
-        children={this.props.children}
         onChange={this.props.onChange}
         type="password"
-        value={this.props.value} />
+        value={this.props.value}
+      >
+        {this.props.children}
+      </Input>
     );
   }
 }

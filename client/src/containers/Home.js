@@ -12,12 +12,10 @@ class HomePage extends React.Component {
       method: "get",
       headers: {
         Accept: "application/json",
-        Authorization: this.props.token
-      }
-    })
-    .then(res => {
-      res.json()
-      .then(json => {
+        Authorization: this.props.token,
+      },
+    }).then((res) => {
+      res.json().then((json) => {
         if (json.logs.length === 0) {
           ReactDOM.render(
             <p>No recent data to display.</p>,
@@ -26,24 +24,45 @@ class HomePage extends React.Component {
         } else {
           this.fillLogTable(json.logs.slice(0, 5));
         }
-      })
-    })
+      });
+    });
   }
 
   _formatDate(date) {
     const d = new Date(date);
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+    const months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sept",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
     return `${months[d.getMonth()]} ${d.getDate()}`;
   }
 
   fillLogTable(logs) {
     const logRows = [
-      <span className="log-date header">Date</span>,
-      <span className="log-mood-value header">Value</span>,
-      <span className="log-mood-note header">Note</span>
+      <span className="log-date header" key="header-date">
+        Date
+      </span>,
+      <span className="log-mood-value header" key="header-value">
+        Value
+      </span>,
+      <span className="log-mood-note header" key="header-note">
+        Note
+      </span>,
     ];
-    logs.forEach(log => {
-      logRows.push(<span className="log-date">{this._formatDate(log.date)}</span>);
+    logs.forEach((log) => {
+      logRows.push(
+        <span className="log-date">{this._formatDate(log.date)}</span>
+      );
       logRows.push(<span className="log-mood-value">{log.mood.value}</span>);
       logRows.push(<span className="log-mood-note">{log.mood.note}</span>);
     });
@@ -62,11 +81,14 @@ class HomePage extends React.Component {
               <h2>Welcome, {this.props.user.name}.</h2>
               <div className="grid">
                 <MoodEntryForm header="Log Your Mood" />
-                <TextCard header={
-                  <span>
-                    <i className="fi-stluxl-unordered-list-solid"></i>&nbsp;&nbsp;your recent entries
-                  </span>
-                }>
+                <TextCard
+                  header={
+                    <span>
+                      <i className="fi-stluxl-unordered-list-solid"></i>
+                      &nbsp;&nbsp;your recent entries
+                    </span>
+                  }
+                >
                   <div id="recent-logs"></div>
                 </TextCard>
               </div>
@@ -81,7 +103,7 @@ class HomePage extends React.Component {
 function mapStateToProps(state) {
   return {
     token: state.token,
-    user: state.user
+    user: state.user,
   };
 }
 

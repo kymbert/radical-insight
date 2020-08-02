@@ -9,13 +9,15 @@ class EmailInput extends React.Component {
   render() {
     return (
       <Input
-        children={this.props.children}
         errorText="A valid email address is required."
         id="email-input"
         onChange={this.props.onChange}
         type="email"
         validate={this.validate}
-        value={this.props.value} />
+        value={this.props.value}
+      >
+        {this.props.children}
+      </Input>
     );
   }
 }
