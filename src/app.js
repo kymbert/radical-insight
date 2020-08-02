@@ -17,16 +17,19 @@ const userLogsRouter = require("./routes/userLogs");
 mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   })
   .then(() => logger.info("MongoDB connection successful."))
-  .catch(err => {
+  .catch((err) => {
     logger.error(`Error connecting to MongoDB:\n${err.message}`);
   });
 
 const app = express();
 
-const accessLogStream = fs.createWriteStream(path.join(__dirname, "logs/access.log"), { flags: "a" });
+const accessLogStream = fs.createWriteStream(
+  path.join(__dirname, "logs/access.log"),
+  { flags: "a" }
+);
 app.use(morgan("combined", { stream: accessLogStream }));
 if (process.env.NODE_ENV !== "production") {
   app.use(morgan("dev"));
@@ -42,9 +45,9 @@ app.use("/api/user_logs", userLogsRouter);
 app.get("/api/health", (req, res) => {
   res.json({
     status: "200",
-    message: "All good"
+    message: "All good",
   });
-})
+});
 
 if (process.env.NODE_ENV === "production" || process.env.NODE_ENV === "dev") {
   app.use(express.static(path.join(__dirname, "..", "client", "build")));

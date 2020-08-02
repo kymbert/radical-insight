@@ -1,26 +1,26 @@
 const initialState = {
   token: "",
-  user: {}
+  user: {},
 };
 
-const reset = (state) => {
+const reset = () => {
   return {
     token: "",
-    user: {}
-  }
+    user: {},
+  };
 };
 
 const updateToken = (state, payload) => {
   return {
     ...state,
-    token: payload.token
+    token: payload.token,
   };
 };
 
 const updateUser = (state, payload) => {
   return {
     ...state,
-    user: payload
+    user: payload,
   };
 };
 
@@ -33,7 +33,7 @@ const appReducer = (state = initialState, action) => {
     case "UPDATE_USER":
       return updateUser(state, action.payload);
     case "RESET":
-      return reset(state);
+      return reset();
     default:
       return state;
   }
@@ -44,6 +44,6 @@ const rootReducer = (state, action) => {
     state = undefined;
   }
   return appReducer(state, action);
-}
+};
 
 export default rootReducer;

@@ -21,18 +21,18 @@ class MoodEntryForm extends React.Component {
         note: "",
         symptoms: "",
         triggers: "",
-        value: ""
+        value: "",
       },
-      showAllInputs: props.showAllInputs || false
-    }
+      showAllInputs: props.showAllInputs || false,
+    };
   }
 
   handleMoodChange(value) {
     this.setState({
       data: {
         ...this.state.data,
-        value: value
-      }
+        value: value,
+      },
     });
   }
 
@@ -40,8 +40,8 @@ class MoodEntryForm extends React.Component {
     this.setState({
       data: {
         ...this.state.data,
-        note: value
-      }
+        note: value,
+      },
     });
   }
 
@@ -49,8 +49,8 @@ class MoodEntryForm extends React.Component {
     this.setState({
       data: {
         ...this.state.data,
-        symptoms: value
-      }
+        symptoms: value,
+      },
     });
   }
 
@@ -58,8 +58,8 @@ class MoodEntryForm extends React.Component {
     this.setState({
       data: {
         ...this.state.data,
-        triggers: value
-      }
+        triggers: value,
+      },
     });
   }
 
@@ -77,43 +77,44 @@ class MoodEntryForm extends React.Component {
     fetch("/api/user_logs", {
       method: "post",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         userId: this.props.user.id,
-        data: this.state.data
-      })
-    }).then(res => {
+        data: this.state.data,
+      }),
+    }).then(() => {
       this.setState({
         data: {
           note: "",
           symptoms: [],
           triggers: [],
-          value: ""
+          value: "",
         },
-        showAllInputs: false
+        showAllInputs: false,
       });
       this.forceUpdate();
     });
   }
 
   toggleMore() {
-      return (
-        <div className="action-container">
-          <button
-            style={{
-              backgroundColor: "inherit",
-              border: "none",
-              color: theme.palette.primary.main,
-              textAlign: "center"
-            }}
-            onClick={() => {
-              this.setState({showAllInputs: !this.state.showAllInputs});
-          }}>
-            {this.state.showAllInputs ? "less" : "more"}
-          </button>
-        </div>
-      )
+    return (
+      <div className="action-container">
+        <button
+          style={{
+            backgroundColor: "inherit",
+            border: "none",
+            color: theme.palette.primary.main,
+            textAlign: "center",
+          }}
+          onClick={() => {
+            this.setState({ showAllInputs: !this.state.showAllInputs });
+          }}
+        >
+          {this.state.showAllInputs ? "less" : "more"}
+        </button>
+      </div>
+    );
   }
 
   validateMood(value) {
@@ -124,28 +125,44 @@ class MoodEntryForm extends React.Component {
     const symptoms = this.state.showAllInputs ? (
       <TextInput
         onChange={this.handleSymptomsChange}
-        value={this.state.data.symptoms}>symptoms </TextInput>
-      ) : null;
+        value={this.state.data.symptoms}
+      >
+        symptoms{" "}
+      </TextInput>
+    ) : null;
     const triggers = this.state.showAllInputs ? (
       <TextInput
         onChange={this.handleTriggersChange}
-        value={this.state.data.triggers}>triggers </TextInput>) : null;
+        value={this.state.data.triggers}
+      >
+        triggers{" "}
+      </TextInput>
+    ) : null;
 
     return (
-      <TextCard header={
-        <span>
-          <i className="fi-stluxl-pen"></i>&nbsp;&nbsp;new entry
-        </span>
-        } style={this.props.style}>
+      <TextCard
+        header={
+          <span>
+            <i className="fi-stluxl-pen"></i>&nbsp;&nbsp;new entry
+          </span>
+        }
+        style={this.props.style}
+      >
         <div className="mood-entry-form">
           <NumberInput
             errorText="Please enter a number between 1 and 10."
             onChange={this.handleMoodChange}
             validate={this.validateMood}
-            value={this.state.data.value}>mood </NumberInput>
+            value={this.state.data.value}
+          >
+            mood{" "}
+          </NumberInput>
           <TextInput
             onChange={this.handleNoteChange}
-            value={this.state.data.note}>note </TextInput>
+            value={this.state.data.note}
+          >
+            note{" "}
+          </TextInput>
           {symptoms}
           {triggers}
           {this.toggleMore()}
@@ -162,7 +179,7 @@ class MoodEntryForm extends React.Component {
 function mapStateToProps(state) {
   return {
     token: state.token,
-    user: state.user
+    user: state.user,
   };
 }
 

@@ -9,9 +9,11 @@ class NumberInput extends React.Component {
         id={this.props.id}
         errorText={this.props.errorText}
         onChange={this.props.onChange}
-        children={this.props.children}
         validate={this.props.validate}
-        value={this.props.value} />
+        value={this.props.value}
+      >
+        {this.props.children}
+      </Input>
     );
   }
 }
