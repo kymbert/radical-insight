@@ -8,6 +8,7 @@
     "http-proxy-middleware": "^1.0.5",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
+    "react-confirm-alert": "^2.6.1",
     "react-dom": "^16.13.1",
     "react-lite-ui": "^1.0.3",
     "react-redux": "^7.2.1",
@@ -47,7 +48,6 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^7.6.0",
     "eslint-config-prettier": "^6.11.0",
     "husky": "^4.2.5",
     "prettier": "^2.0.5",

@@ -4,7 +4,7 @@ import EmailInput from "../components/EmailInput";
 import PasswordInput from "../components/PasswordInput";
 import React from "react";
 import Submit from "../components/Submit";
-import TextCard from "../components/TextCard";
+import Card from "../components/Card";
 import TextInput from "../components/TextInput";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -17,7 +17,7 @@ class SignUp extends React.Component {
       name: "",
       email: "",
       password: "",
-      password2: ""
+      password2: "",
     };
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
@@ -49,31 +49,31 @@ class SignUp extends React.Component {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      password2: this.state.password2
+      password2: this.state.password2,
     };
     fetch("/api/auth/register", {
       method: "post",
       headers: {
         "Content-type": "application/json",
-        Accept: "application/json"
+        Accept: "application/json",
       },
-      body: JSON.stringify(body)
-    }).then(response => {
+      body: JSON.stringify(body),
+    }).then((response) => {
       if (response.ok) {
         response.json().then(() => {
           fetch("/api/auth/login", {
             method: "post",
             headers: {
               "Content-type": "application/json",
-              Accept: "application/json"
+              Accept: "application/json",
             },
             body: JSON.stringify({
               email: this.state.email,
-              password: this.state.password
-            })
-          }).then(response => {
+              password: this.state.password,
+            }),
+          }).then((response) => {
             if (response.ok) {
-              response.json().then(json => {
+              response.json().then((json) => {
                 this.props.updateToken({ token: json.token });
                 this.props.updateUser({ ...json.user });
               });
@@ -82,7 +82,7 @@ class SignUp extends React.Component {
           });
         });
       } else {
-        response.json().then(json => {
+        response.json().then((json) => {
           document.getElementById("name-error").innerText = json.name || "";
           document.getElementById("email-error").innerText = json.email || "";
           document.getElementById("password-error").innerText =
@@ -110,36 +110,39 @@ class SignUp extends React.Component {
     return (
       <div id="sign-up-page" className="content">
         <h3>Create an Account</h3>
-        <TextCard style={{
-          backgroundColor: theme.palette.primary.transparent,
-        }}>
+        <Card
+          style={{
+            backgroundColor: theme.palette.primary.transparent,
+          }}
+        >
           <TextInput
             id="name-input"
             errorText="Name is required. Feel free to use a pseudonym, though."
             onChange={this.handleNameChange}
-            validate={this.validateName}>
+            validate={this.validateName}
+          >
             name
           </TextInput>
-          <EmailInput onChange={this.handleEmailChange}>
-            email
-          </EmailInput>
+          <EmailInput onChange={this.handleEmailChange}>email</EmailInput>
           <PasswordInput
             id="password-1"
             errorText="Password must be at least 12 characters."
             validate={this.validatePassword1}
-            onChange={this.handlePassword1Change}>
+            onChange={this.handlePassword1Change}
+          >
             password
           </PasswordInput>
           <PasswordInput
             id="password-2"
             errorText="Passwords must match."
             validate={this.validatePassword2}
-            onChange={this.handlePassword2Change}>
+            onChange={this.handlePassword2Change}
+          >
             confirm password
           </PasswordInput>
           <Submit onClick={this.handleSubmit} style={{ float: "right" }} />
           <div style={{ clear: "both" }}></div>
-        </TextCard>
+        </Card>
       </div>
     );
   }
@@ -149,7 +152,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ reset, updateUser, updateToken }, dispatch);
 }
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(SignUp);
+export default connect(null, mapDispatchToProps)(SignUp);

@@ -1,186 +1,197 @@
 import "./MoodEntryForm.scss";
+import "react-confirm-alert/src/react-confirm-alert.css";
 
+import Card from "./Card";
+import DatePicker from "react-date-picker";
 import NumberInput from "./NumberInput";
 import React from "react";
-import Submit from "./Submit";
-import TextCard from "./TextCard";
 import TextInput from "./TextInput";
-import { connect } from "react-redux";
-import theme from "../theme";
 
 class MoodEntryForm extends React.Component {
   constructor(props) {
     super(props);
+    this.handleDateChange = this.handleDateChange.bind(this);
     this.handleMoodChange = this.handleMoodChange.bind(this);
     this.handleNoteChange = this.handleNoteChange.bind(this);
-    this.handleSymptomsChange = this.handleSymptomsChange.bind(this);
-    this.handleTriggersChange = this.handleTriggersChange.bind(this);
+    this.handleStressorsChange = this.handleStressorsChange.bind(this);
     this.submit = this.submit.bind(this);
-    this.state = {
-      data: {
-        note: "",
-        symptoms: "",
-        triggers: "",
-        value: "",
-      },
-      showAllInputs: props.showAllInputs || false,
+    const entryData = {
+      date: props.entryData.date || new Date(),
+      mood: props.entryData.mood || "",
+      note: props.entryData.note || "",
+      stressors: props.entryData.stressors || "",
     };
+    this.state = {
+      entryData: entryData,
+      logId: props.logId,
+      userId: props.userId,
+    };
+  }
+
+  handleDateChange(value) {
+    this.setState({
+      entryData: {
+        ...this.state.entryData,
+        date: new Date(value),
+      },
+    });
   }
 
   handleMoodChange(value) {
     this.setState({
-      data: {
-        ...this.state.data,
-        value: value,
+      entryData: {
+        ...this.state.entryData,
+        mood: value,
       },
     });
   }
 
   handleNoteChange(value) {
     this.setState({
-      data: {
-        ...this.state.data,
+      entryData: {
+        ...this.state.entryData,
         note: value,
       },
     });
   }
 
-  handleSymptomsChange(value) {
+  handleStressorsChange(value) {
     this.setState({
-      data: {
-        ...this.state.data,
-        symptoms: value,
-      },
-    });
-  }
-
-  handleTriggersChange(value) {
-    this.setState({
-      data: {
-        ...this.state.data,
-        triggers: value,
+      entryData: {
+        ...this.state.entryData,
+        stressors: value,
       },
     });
   }
 
   submit(event) {
     event.preventDefault();
-    let symptomArray = this.state.data.symptoms.split(",");
-    symptomArray.forEach((symptom, i) => {
-      symptomArray[i] = symptom.trim();
-    });
-    let triggerArray = this.state.data.triggers.split(",");
-    triggerArray.forEach((trigger, i) => {
-      triggerArray[i] = trigger.trim();
+    let stressorArray =
+      typeof this.state.entryData.stressors === "object"
+        ? this.state.entryData.stressors[0].split(",")
+        : [];
+    stressorArray.forEach((stressor, i) => {
+      stressorArray[i] = stressor.trim();
     });
 
-    fetch("/api/user_logs", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        userId: this.props.user.id,
-        data: this.state.data,
-      }),
-    }).then(() => {
-      this.setState({
-        data: {
-          note: "",
-          symptoms: [],
-          triggers: [],
-          value: "",
-        },
-        showAllInputs: false,
+    if (this.state.logId) {
+      fetch(
+        `/api/moodLogs/user/${this.state.userId}/moodLog/${this.state.logId}`,
+        {
+          method: "put",
+          headers: {
+            Accept: "application/json",
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(this.state.entryData),
+        }
+      ).then(() => {
+        this.setState({
+          entryData: {
+            date: new Date(),
+            mood: "",
+            note: "",
+            stressors: "",
+          },
+        });
+        this.forceUpdate();
       });
-      this.forceUpdate();
-    });
+    } else {
+      fetch("/api/moodLogs", {
+        method: "post",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          userId: this.props.userId,
+          entryData: this.state.entryData,
+        }),
+      }).then(() => {
+        this.setState({
+          entryData: {
+            date: new Date(),
+            mood: "",
+            note: "",
+            stressors: "",
+          },
+        });
+        this.forceUpdate();
+      });
+    }
+    this.props.onClose();
   }
 
-  toggleMore() {
-    return (
-      <div className="action-container">
-        <button
-          style={{
-            backgroundColor: "inherit",
-            border: "none",
-            color: theme.palette.primary.main,
-            textAlign: "center",
-          }}
-          onClick={() => {
-            this.setState({ showAllInputs: !this.state.showAllInputs });
-          }}
-        >
-          {this.state.showAllInputs ? "less" : "more"}
-        </button>
-      </div>
-    );
+  validateDate(value) {
+    return Date.now() >= value;
   }
 
-  validateMood(value) {
-    return value >= 1 && value <= 10;
+  validateZeroTen(value) {
+    return value >= 0 && value <= 10;
+  }
+
+  addLeadingZero(number) {
+    if (number <= 9) {
+      return `0${number}`;
+    }
+    return number;
   }
 
   render() {
-    const symptoms = this.state.showAllInputs ? (
-      <TextInput
-        onChange={this.handleSymptomsChange}
-        value={this.state.data.symptoms}
-      >
-        symptoms{" "}
-      </TextInput>
-    ) : null;
-    const triggers = this.state.showAllInputs ? (
-      <TextInput
-        onChange={this.handleTriggersChange}
-        value={this.state.data.triggers}
-      >
-        triggers{" "}
-      </TextInput>
-    ) : null;
-
     return (
-      <TextCard
+      <Card
         header={
           <span>
-            <i className="fi-stluxl-pen"></i>&nbsp;&nbsp;new entry
+            <i className="fi-stluxl-pen"></i>&nbsp;&nbsp;{this.props.title}
           </span>
         }
         style={this.props.style}
       >
         <div className="mood-entry-form">
+          <div className="input-container">
+            <label>date </label>
+            <DatePicker
+              value={this.state.entryData.date}
+              onChange={this.handleDateChange}
+            />
+          </div>
           <NumberInput
-            errorText="Please enter a number between 1 and 10."
+            errorText="Please enter a number between 0 and 10."
             onChange={this.handleMoodChange}
-            validate={this.validateMood}
-            value={this.state.data.value}
+            validate={this.validateZeroTen}
+            value={this.state.entryData.mood}
           >
             mood{" "}
           </NumberInput>
           <TextInput
+            onChange={this.handleStressorsChange}
+            value={this.state.entryData.stressors}
+          >
+            stressors{" "}
+          </TextInput>
+          <TextInput
             onChange={this.handleNoteChange}
-            value={this.state.data.note}
+            value={this.state.entryData.note}
           >
             note{" "}
           </TextInput>
-          {symptoms}
-          {triggers}
-          {this.toggleMore()}
-          <div className="action-container">
-            <div></div>
-            <Submit onClick={this.submit} />
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "auto max-content max-content",
+            }}
+          >
+            <div className="spacer"></div>
+            <button className="btn-secondary" onClick={this.props.onClose}>
+              Cancel
+            </button>
+            <button className="btn-primary" onClick={this.submit}>
+              {this.props.submitText || "Submit"}
+            </button>
           </div>
         </div>
-      </TextCard>
+      </Card>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    token: state.token,
-    user: state.user,
-  };
-}
-
-export default connect(mapStateToProps)(MoodEntryForm);
+export default MoodEntryForm;

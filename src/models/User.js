@@ -1,6 +1,6 @@
 const JournalSchema = require("./Journal");
 const ReminderSchema = require("./Reminder");
-const UserLogSchema = require("./UserLog");
+const MoodLogSchema = require("./MoodLog");
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
@@ -10,34 +10,34 @@ const UserSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    dropDups: true
+    dropDups: true,
   },
   name: {
     type: String,
-    required: true
+    required: true,
   },
   lastLogin: {
     type: Date,
     required: true,
-    default: Date.now()
+    default: Date.now(),
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
   phone: {
-    type: String
+    type: String,
   },
   journals: [JournalSchema],
-  logs: [UserLogSchema],
-  reminders: [ReminderSchema]
+  moodLogs: [MoodLogSchema],
+  reminders: [ReminderSchema],
 });
 
 /**
  * toJSON transform
  */
 UserSchema.options.toJSON = {
-  transform: function(doc, ret) {
+  transform: function (doc, ret) {
     ret.id = ret._id;
     delete ret._id;
     delete ret.password;
@@ -45,7 +45,7 @@ UserSchema.options.toJSON = {
     delete ret.logs;
     delete ret.reminders;
     return ret;
-  }
+  },
 };
 
 mongoose.model("users", UserSchema);

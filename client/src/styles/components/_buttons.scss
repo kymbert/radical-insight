@@ -3,14 +3,15 @@
 @mixin all-buttons {
   @include button-text;
   border: none;
-  box-shadow: 1px 1px transparentize($primary-color-light, 0.7);
+  box-shadow: 2px 2px transparentize(black, 0.25);
   color: $text-primary;
   font-size: $font-size-normal;
   height: $font-size-large;
   margin: $font-size-small;
   text-align: center;
   text-decoration: none;
-  &:hover, &:active {
+  &:hover,
+  &:active {
     cursor: pointer;
   }
 }

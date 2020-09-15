@@ -1,20 +1,17 @@
 @import "../styles/main";
 
 .mood-entry-form {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  // margin-left: $font-size-x-large;
+  .input-container {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+  }
 
-  // div.input-container {
-  //   display: grid;
-  //   grid-template-columns: max-content auto;
-  //   grid-template-rows: auto;
-  // }
+  .error-text {
+    display: none;
+  }
 
   div.action-container {
     display: grid;
     grid-template-columns: auto max-content;
   }
-
 }

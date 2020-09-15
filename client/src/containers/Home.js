@@ -1,75 +1,32 @@
 import "../styles/_home.container.scss";
 
+import Card from "../components/Card";
 import MoodEntryForm from "../components/MoodEntryForm";
 import React from "react";
-import ReactDOM from "react-dom";
-import TextCard from "../components/TextCard";
+import RecentData from "../components/RecentData";
+import { confirmAlert } from "react-confirm-alert";
 import { connect } from "react-redux";
 
 class HomePage extends React.Component {
-  componentDidMount() {
-    fetch(`/api/user_logs/${this.props.user.id}`, {
-      method: "get",
-      headers: {
-        Accept: "application/json",
-        Authorization: this.props.token,
-      },
-    }).then((res) => {
-      res.json().then((json) => {
-        if (json.logs.length === 0) {
-          ReactDOM.render(
-            <p>No recent data to display.</p>,
-            document.getElementById("recent-logs")
-          );
-        } else {
-          this.fillLogTable(json.logs.slice(0, 5));
-        }
-      });
-    });
+  constructor(props) {
+    super(props);
+    this.newLog = this.newLog.bind(this);
   }
 
-  _formatDate(date) {
-    const d = new Date(date);
-    const months = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sept",
-      "Oct",
-      "Nov",
-      "Dec",
-    ];
-    return `${months[d.getMonth()]} ${d.getDate()}`;
-  }
-
-  fillLogTable(logs) {
-    const logRows = [
-      <span className="log-date header" key="header-date">
-        Date
-      </span>,
-      <span className="log-mood-value header" key="header-value">
-        Value
-      </span>,
-      <span className="log-mood-note header" key="header-note">
-        Note
-      </span>,
-    ];
-    logs.forEach((log) => {
-      logRows.push(
-        <span className="log-date">{this._formatDate(log.date)}</span>
-      );
-      logRows.push(<span className="log-mood-value">{log.mood.value}</span>);
-      logRows.push(<span className="log-mood-note">{log.mood.note}</span>);
+  newLog(event) {
+    event.preventDefault();
+    confirmAlert({
+      customUI: ({ onClose }) => (
+        <div className="modal">
+          <MoodEntryForm
+            title="new entry"
+            entryData={{}}
+            userId={this.props.user.id}
+            onClose={onClose}
+          />
+        </div>
+      ),
     });
-    ReactDOM.render(
-      <div className="the-grid">{logRows}</div>,
-      document.getElementById("recent-logs")
-    );
   }
 
   render() {
@@ -80,17 +37,13 @@ class HomePage extends React.Component {
             <div className="heading">
               <h2>Welcome, {this.props.user.name}.</h2>
               <div className="grid">
-                <MoodEntryForm header="Log Your Mood" />
-                <TextCard
-                  header={
-                    <span>
-                      <i className="fi-stluxl-unordered-list-solid"></i>
-                      &nbsp;&nbsp;your recent entries
-                    </span>
-                  }
-                >
-                  <div id="recent-logs"></div>
-                </TextCard>
+                <Card id="new-log">
+                  <div id="new-log" />
+                  <button className="btn-primary" onClick={this.newLog}>
+                    track mood now
+                  </button>
+                </Card>
+                <RecentData />
               </div>
             </div>
           </div>
@@ -102,6 +55,7 @@ class HomePage extends React.Component {
 
 function mapStateToProps(state) {
   return {
+    moodEntryFormDidSubmit: state.moodEntryFormDidSubmit,
     token: state.token,
     user: state.user,
   };

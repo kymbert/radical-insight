@@ -10,7 +10,7 @@ const User = mongoose.model("users");
 const { logger } = require("../logger");
 const {
   validateLoginInput,
-  validateRegisterInput
+  validateRegisterInput,
 } = require("../services/authService");
 
 router.get(
@@ -22,8 +22,8 @@ router.get(
       data: {
         id: req.user.id,
         name: req.user.name,
-        email: req.user.email
-      }
+        email: req.user.email,
+      },
     });
   }
 );
@@ -31,60 +31,64 @@ router.get(
 router.post("/login", (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
   if (!isValid) {
+    logger.warn("Invalid login credentials.");
     return res.status(400).json({
       status: "fail",
-      data: errors
+      data: errors,
     });
   }
   const { email, password } = req.body;
-  User.findOne({ email }).then(user => {
+  User.findOne({ email }).then((user) => {
     if (!user) {
+      logger.warn(
+        "Attempted log in with email ${email}, but user does not exist."
+      );
       return res.status(404).json({
         status: "fail",
-        data: errors
+        data: errors,
       });
     }
-    bcrypt.compare(password, user.password).then(isMatch => {
+    bcrypt.compare(password, user.password).then((isMatch) => {
       if (isMatch) {
-        user.lastLogin = Date.now();
+        user.lastLogin = new Date();
         user
           .save()
-          .then(savedUser => {
-            const payload = {
-              id: savedUser.id,
-              name: savedUser.name
-            };
+          .then((savedUser) => {
             jwt.sign(
-              payload,
+              { id: savedUser.id, name: savedUser.name },
               process.env.JWT_SECRET,
-              {
-                expiresIn: 31556926
-              },
+              { expiresIn: 31556926 },
               (err, token) => {
                 if (err) {
+                  logger.error(err.message);
                   return res.status(500).json({
                     status: "error",
-                    message: err.message
+                    message: err.message,
                   });
                 } else {
                   return res.json({
                     status: "success",
                     data: {
                       token: "Bearer " + token,
-                      user: savedUser.toJSON()
-                    }
+                      user: savedUser.toJSON(),
+                    },
                   });
                 }
               }
             );
           })
-          .catch(err => logger.error(err));
+          .catch((err) => {
+            logger.error(`Error for user with id ${user.id}: ${err.message}`);
+          });
       } else {
+        logger.warn(
+          `Attempted login with email "${email}" failed with incorrect password.`
+        );
         return res.status(400).json({
           status: "fail",
           data: {
-            message: "Incorrect email or password."
-          }
+            message: "Incorrect email or password.",
+          },
         });
       }
     });
@@ -96,46 +100,46 @@ router.post("/register", (req, res) => {
   if (!isValid) {
     return res.status(400).json({
       status: "fail",
-      data: errors
+      data: errors,
     });
   }
 
-  User.findOne({ email: req.body.email }).then(user => {
+  User.findOne({ email: req.body.email }).then((user) => {
     if (user) {
       return res.status(400).json({
         status: "fail",
         data: {
-          email: "An account with that email already exists."
-        }
+          email: "An account with that email already exists.",
+        },
       });
     }
     const newUser = new User({
       name: req.body.name,
       email: req.body.email,
       lastLogin: Date.now(),
-      password: req.body.password
+      password: req.body.password,
     });
     bcrypt.genSalt(10, (err, salt) => {
       bcrypt.hash(newUser.password, salt, (err, hash) => {
         if (err) {
           return res.status(500).json({
             status: "error",
-            message: err.message
+            message: err.message,
           });
         }
         newUser.password = hash;
         newUser
           .save()
-          .then(user =>
+          .then((user) =>
             res.json({
               status: "success",
-              data: user.toJSON
+              data: user.toJSON,
             })
           )
-          .catch(err =>
+          .catch((err) =>
             res.status(500).json({
               status: "error",
-              message: err.message
+              message: err.message,
             })
           );
       });

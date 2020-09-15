@@ -1,7 +1,7 @@
 import "../styles/_about.container.scss";
 
 import React from "react";
-import TextCard from "../components/TextCard";
+import Card from "../components/Card";
 
 class AboutPage extends React.Component {
   render() {
@@ -9,7 +9,7 @@ class AboutPage extends React.Component {
       <div className="content">
         <div className="about">
           <h3 style={{ marginBottom: "0" }}>About</h3>
-          <TextCard>
+          <Card>
             <p>
               A little background provided by Kyle Imbertson, founder of Radical
               Insight, in January 2019:
@@ -23,8 +23,8 @@ class AboutPage extends React.Component {
                 Kyle in his office, sometime in late 2019.
               </p>
             </div>
-          </TextCard>
-          <TextCard header="Background">
+          </Card>
+          <Card header="Background">
             <div className="body2">
               <p>
                 Many therapists and psychiatrists recommend a daily mood log or
@@ -70,7 +70,7 @@ class AboutPage extends React.Component {
                 great.
               </p>
             </div>
-          </TextCard>
+          </Card>
         </div>
       </div>
     );
