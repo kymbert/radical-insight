@@ -1,8 +1,8 @@
-import "./TextCard.scss";
+import "./Card.scss";
 
 import React from "react";
 
-class TextCard extends React.Component {
+class Card extends React.Component {
   render() {
     return (
       <div
@@ -16,4 +16,4 @@ class TextCard extends React.Component {
   }
 }
 
-export default TextCard;
+export default Card;

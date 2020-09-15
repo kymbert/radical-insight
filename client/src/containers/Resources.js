@@ -1,5 +1,5 @@
 import React from "react";
-import TextCard from "../components/TextCard";
+import Card from "../components/Card";
 
 class ResourcesPage extends React.Component {
   render() {
@@ -9,7 +9,7 @@ class ResourcesPage extends React.Component {
           <div id="title">
             <h3 style={{ marginBottom: "0" }}>Resources</h3>
           </div>
-          <TextCard
+          <Card
             className="resource"
             header="If you or a loved one need immediate help"
           >
@@ -29,8 +29,8 @@ class ResourcesPage extends React.Component {
               <li>National Sexual Assault Hotline – 1-800-656-HOPE (4673)</li>
               <li>NAMI crisis text line – text "NAMI" to 741-741</li>
             </ul>
-          </TextCard>
-          <TextCard
+          </Card>
+          <Card
             className="resource"
             header="Depression and Bipolar Support Alliance (DBSA)"
           >
@@ -55,8 +55,8 @@ class ResourcesPage extends React.Component {
               support groups, DBSA provides online and print educational
               materials and sponsors additional events.
             </p>
-          </TextCard>
-          <TextCard
+          </Card>
+          <Card
             className="resource"
             header="National Alliance on Mental Illness (NAMI)"
           >
@@ -75,8 +75,8 @@ class ResourcesPage extends React.Component {
               groups, and a crisis text line (text "NAMI" to 741-741 to be
               connected with a trained crisis counselor).
             </p>
-          </TextCard>
-          <TextCard className="resource" header="Metanoia.org">
+          </Card>
+          <Card className="resource" header="Metanoia.org">
             <p>
               While the website is terrifically dated and not at all a source of
               professional aid, I (Kyle) have found{" "}
@@ -98,7 +98,7 @@ class ResourcesPage extends React.Component {
               </a>{" "}
               when you visit.
             </p>
-          </TextCard>
+          </Card>
         </div>
       </div>
     );

@@ -15,3 +15,14 @@ $text-primary: $surface-color;
 $text-inverted-color: $background-color;
 $text-secondary: darken($text-primary, 20%);
 $error-color: saturate($secondary-color, 50%);
+
+@mixin filter-text-secondary {
+  filter: invert(74%) sepia(10%) saturate(558%) hue-rotate(183deg)
+    brightness(89%) contrast(88%);
+}
+
+@mixin filter-error-text {
+  // filter: invert(14%) sepia(62%) saturate(4394%) hue-rotate(333deg) brightness(83%) contrast(96%);
+  filter: invert(29%) sepia(9%) saturate(2195%) hue-rotate(295deg)
+    brightness(89%) contrast(91%);
+}

@@ -12,7 +12,7 @@ const { logger } = require("./logger");
 
 const authRouter = require("./routes/auth");
 const usersRouter = require("./routes/users");
-const userLogsRouter = require("./routes/userLogs");
+const moodLogsRouter = require("./routes/moodLogs");
 
 mongoose
   .connect(process.env.MONGO_URI, {
@@ -41,7 +41,7 @@ require("./config/passport")(passport);
 
 app.use("/api/auth", authRouter);
 app.use("/api/users", usersRouter);
-app.use("/api/user_logs", userLogsRouter);
+app.use("/api/moodLogs", moodLogsRouter);
 app.get("/api/health", (req, res) => {
   res.json({
     status: "200",

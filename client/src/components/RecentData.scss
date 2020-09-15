@@ -1,0 +1,30 @@
+@import "../styles/main";
+
+#recent-logs {
+  div.the-grid {
+    display: grid;
+    grid-template-columns: max-content auto auto max-content max-content;
+    grid-column-gap: $font-size-xx-small;
+    color: $text-secondary;
+
+    span {
+      font-size: $font-size-small;
+      &.header {
+        color: $text-primary;
+        font-size: $font-size-normal;
+      }
+
+      &.action {
+        cursor: pointer;
+      }
+
+      &.delete {
+        @include filter-error-text;
+      }
+
+      &.edit {
+        @include filter-text-secondary;
+      }
+    }
+  }
+}

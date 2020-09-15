@@ -14,7 +14,7 @@ class LogIn extends React.Component {
     super(props);
     this.state = {
       email: "",
-      password: ""
+      password: "",
     };
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
@@ -33,25 +33,24 @@ class LogIn extends React.Component {
     event.preventDefault();
     const body = {
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
     };
     fetch("/api/auth/login", {
       method: "post",
       headers: {
         "Content-type": "application/json",
-        "Accept": "application/json"
+        Accept: "application/json",
       },
-      body: JSON.stringify(body)
-    }).then(response => {
+      body: JSON.stringify(body),
+    }).then((response) => {
       if (response.ok) {
-        response.json()
-        .then(json => {
+        response.json().then((json) => {
           this.props.updateToken({ token: json.data.token });
           this.props.updateUser(json.data.user);
           window.location = "/";
         });
       } else {
-        response.json().then(json => {
+        response.json().then((json) => {
           if (json.status === "error") {
             document.getElementById("error-text").innerText = json.message;
           } else {
@@ -65,13 +64,11 @@ class LogIn extends React.Component {
   render() {
     return (
       <div id="log-in-page" className="content">
-        <h3>Sign In</h3>
+        <h3>Log In</h3>
         <div id="log-in-form">
           <div id="error-text" className="error" />
-          <EmailInput onChange={this.handleEmailChange}>
-            email
-          </EmailInput>
-          <PasswordInput onChange={this.handlePasswordChange} validate={() => {return true}}>
+          <EmailInput onChange={this.handleEmailChange}>email</EmailInput>
+          <PasswordInput onChange={this.handlePasswordChange}>
             password
           </PasswordInput>
           <Submit onClick={this.handleSubmit} style={{ float: "right" }} />
