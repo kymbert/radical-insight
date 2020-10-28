@@ -26,6 +26,10 @@ mongoose
 
 const app = express();
 
+app.get("*", (req, res) => {
+  res.redirect("https://" + req.headers.host + req.url);
+});
+
 const accessLogStream = fs.createWriteStream(
   path.join(__dirname, "logs/access.log"),
   { flags: "a" }
