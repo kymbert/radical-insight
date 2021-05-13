@@ -7,25 +7,25 @@ const User = mongoose.model("users");
 
 const DEFAULT_USER = users.min_required.bob;
 
-beforeEach(done => {
-  new User(DEFAULT_USER).save().then(() => {
-    done();
-  });
-});
-
-afterEach(done => {
-  User.collection.drop().then(() => {
-    done();
-  });
-});
-
 describe("User", () => {
-  it("create: requires email", done => {
+  beforeEach((done) => {
+    User.create(DEFAULT_USER).then(() => {
+      done();
+    });
+  });
+
+  afterEach((done) => {
+    User.collection.drop().then(() => {
+      done();
+    });
+  });
+
+  it("create: requires email", (done) => {
     const bob = new User({
       name: "Bob Belcher",
-      password: "ilovelinda"
+      password: "ilovelinda",
     });
-    bob.validate(error => {
+    bob.validate((error) => {
       assert(error.errors.email !== undefined);
       assert(error.errors.name === undefined);
       assert(error.errors.password === undefined);
@@ -33,12 +33,12 @@ describe("User", () => {
     });
   });
 
-  it("create: requires name", done => {
+  it("create: requires name", (done) => {
     const bob = new User({
       email: "bob@bobsburgers.local",
-      password: "ilovelinda"
+      password: "ilovelinda",
     });
-    bob.validate(error => {
+    bob.validate((error) => {
       assert(error.errors.email === undefined);
       assert(error.errors.name !== undefined);
       assert(error.errors.password === undefined);
@@ -46,12 +46,12 @@ describe("User", () => {
     });
   });
 
-  it("create: requires password", done => {
+  it("create: requires password", (done) => {
     const bob = new User({
       email: "bob@bobsburgers.local",
-      name: "Bob Belcher"
+      name: "Bob Belcher",
     });
-    bob.validate(error => {
+    bob.validate((error) => {
       assert(error.errors.email === undefined);
       assert(error.errors.name === undefined);
       assert(error.errors.password !== undefined);
@@ -59,23 +59,25 @@ describe("User", () => {
     });
   });
 
-  it("create: prevents duplicate email", done => {
+  it("create: prevents duplicate email", (done) => {
     const params = {
       email: DEFAULT_USER.email,
       name: "Imposter Bob Belcher",
-      password: "ilovegayle"
+      password: "ilovegayle",
     };
-    new User(params).save(error => {
-      if (error) {
+
+    User.create(params)
+      .then(() => {
+        throw new Error("expecting error when saving with duplicate email");
+      })
+      .catch(() => {
         done();
-      }
-      throw new Error("expecting error when saving with duplicate email");
-    });
+      });
   });
 
-  it("create: all inputs are saved", done => {
+  it("create: all inputs are saved", (done) => {
     const params = users.full_demographic.bob;
-    new User(params).save().then(savedUser => {
+    new User(params).save().then((savedUser) => {
       const today = new Date();
       assert(savedUser.agreedToTerms.getDate() === today.getDate());
       assert(savedUser.email === params.email);
@@ -87,16 +89,16 @@ describe("User", () => {
     });
   });
 
-  it("create: sets default `lastLogin` value to today", done => {
-    new User(users.min_required.linda).save().then(savedUser => {
+  it("create: sets default `lastLogin` value to today", (done) => {
+    new User(users.min_required.linda).save().then((savedUser) => {
       const today = new Date();
       assert(savedUser.lastLogin.getDate() === today.getDate());
       done();
     });
   });
 
-  it("read: returns user as JSON with id and version", done => {
-    User.findOne({ email: DEFAULT_USER.email }).then(foundUser => {
+  it("read: returns user as JSON with id and version", (done) => {
+    User.findOne({ email: DEFAULT_USER.email }).then((foundUser) => {
       assert(typeof foundUser === "object");
       assert(typeof foundUser.__v === "number");
       assert(typeof (foundUser.id === "string"));
@@ -104,10 +106,10 @@ describe("User", () => {
     });
   });
 
-  it("read: returns all parameters with data", done => {
+  it("read: returns all parameters with data", (done) => {
     const params = users.full_demographic.bob;
     new User(params).save().then(() => {
-      User.findOne({ email: params.email }).then(foundUser => {
+      User.findOne({ email: params.email }).then((foundUser) => {
         const today = new Date();
         assert(foundUser.agreedToTerms.getDate() === today.getDate());
         assert(foundUser.email === params.email);
